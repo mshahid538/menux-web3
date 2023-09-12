@@ -1,0 +1,15 @@
+
+.menu {
+  background: black;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin-top: 400px;
+}

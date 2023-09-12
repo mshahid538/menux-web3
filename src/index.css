@@ -1,0 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/louis-george-cafe');
+
+
+
+body {
+  margin: 0;
+  font-family: Inter !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F3F3F3;
+}
+
+code {
+  font-family: Inter !important;
+}

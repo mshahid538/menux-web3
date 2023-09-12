@@ -1,0 +1,19 @@
+.select {
+  height: 100px;
+  width: 96px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.icon {
+  width: 50px;
+}
+
+.active {
+  background-color: #66bc48;
+  color: white;
+}

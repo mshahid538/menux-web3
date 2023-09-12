@@ -1,0 +1,24 @@
+.header{
+background: black;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+}
+
+.imgs{
+    display: flex;
+    justify-content: center;
+}
+.img{
+    border-radius: 10%;
+    width: 310px;
+    height: 207px;
+}
+
+.selected{
+-webkit-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+}
