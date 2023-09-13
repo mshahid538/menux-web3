@@ -263,7 +263,7 @@ function FinalResult() {
                 justifySelf={"start"}
                 fontSize={24}
               >
-                Description:
+                Description22:
               </Typography>
               <Typography
                 fontSize={24}
@@ -322,18 +322,17 @@ function FinalResult() {
                 {!allergenInfo && <>Milk</>}
               </Typography>
             </Box> */}
-
             <CategoriesAccordion
               name={" - Food"}
               title={"Cookie"}
               subtitle={"VEGAN Milk Chocolate"}
             />
-            <ProductAccordion
+            {/* <ProductAccordion
               name={"- Pan Fried Chicken Breast"}
               title={"Mains"}
               subtitle={"Soup"}
               callback={handleCallback}
-            />
+            /> */}
             <ProductAccordion
               name={"- Drinks"}
               title={"Mains"}
