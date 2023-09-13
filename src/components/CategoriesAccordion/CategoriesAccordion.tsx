@@ -10,6 +10,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import { Results1 } from "../../constants/Results1";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../app/features/category/categorySlice";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { Data } from "../../data/data";
 
@@ -205,28 +206,90 @@ function CategoriesAccordion({ name }: any) {
                         fontWeight={"bold"}
                       >
                         <Box display={"grid"}>
-                          <Typography
-                            variant="subtitle1"
-                            mt={1}
-                            fontWeight={"bold"}
-                            justifySelf={"start"}
-                            fontSize={24}
+                          <Grid>
+                            <Typography
+                              variant="subtitle1"
+                              mt={1}
+                              fontWeight={"bold"}
+                              justifySelf={"start"}
+                              fontSize={24}
+                            >
+                              Description:
+                            </Typography>
+                            <Typography
+                              fontSize={24}
+                              variant="subtitle1"
+                              mt={1}
+                              fontWeight={"normal"}
+                              display={"grid"}
+                              textAlign={"start"}
+                              justifySelf={"start"}
+                            >
+                              Filled with a cheesy garlic sorrel butter and
+                              accompained with a tomato and basil sauce. Chilli
+                              compound.
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
                           >
-                            Description:
-                          </Typography>
-                          <Typography
-                            fontSize={24}
-                            variant="subtitle1"
-                            mt={1}
-                            fontWeight={"bold"}
-                            display={"grid"}
-                            textAlign={"start"}
-                            justifySelf={"start"}
+                            <CheckCircleIcon
+                              sx={{
+                                color: "#13BF5B",
+                                backgroundColor: "black",
+                                borderRadius: "50%",
+                              }}
+                            />
+                            <Typography
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                              // color={"#13BF5B"}
+                            >
+                              Vegetarian
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
                           >
-                            Filled with a cheesy garlic sorrel butter and
-                            accompained with a tomato and basil sauce. Chilli
-                            compound
-                          </Typography>
+                            <CheckCircleIcon
+                              sx={{
+                                color: "#13BF5B",
+                                backgroundColor: "black",
+                                borderRadius: "50%",
+                              }}
+                            />
+                            <Typography
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                              // color={"#13BF5B"}
+                            >
+                              Vegan
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                          >
+                            <CheckCircleIcon
+                              sx={{
+                                color: "#13BF5B",
+                                backgroundColor: "black",
+                                borderRadius: "50%",
+                              }}
+                            />
+                            <Typography
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                              // color={"#13BF5B"}
+                            >
+                              Free From
+                            </Typography>
+                          </Grid>
                         </Box>
 
                         <Box display={"grid"}>

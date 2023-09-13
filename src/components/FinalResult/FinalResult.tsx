@@ -160,13 +160,16 @@ function FinalResult() {
     console.log("Hello Callback");
   }
   return (
-    <Box sx={{ width: "100%" }} onClick={() => console.log(requirements)}>
+    <Box
+      sx={{ width: "100%", backgroundColor: "white" }}
+      onClick={() => console.log(requirements)}
+    >
       {/* <Button onClick={handleReduxData}>Test Collected Data</Button> */}
       <Grid className="header">
         <Header />
       </Grid>
       <Grid className="edit">
-       <EditSection  />
+        <EditSection />
       </Grid>
       <Box my={3}>
         {/* {allergenInfo && (
@@ -200,7 +203,7 @@ function FinalResult() {
             margin={"0 auto"}
             width={"60%"}
           >
-            <Button
+            {/* <Button
               className="btn"
               sx={{
                 background: "#ED187C",
@@ -318,7 +321,8 @@ function FinalResult() {
                 {allergenInfo && allergenInfo.mayContain.join(", ")}
                 {!allergenInfo && <>Milk</>}
               </Typography>
-            </Box>
+            </Box> */}
+
             <CategoriesAccordion
               name={" - Food"}
               title={"Cookie"}

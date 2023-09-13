@@ -4,69 +4,77 @@ import { Box } from "@mui/material";
 // import { Grid } from "@mui/material";
 import { Container, Grid, Typography, Button } from "@mui/material";
 import { useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
-
-
+import { useNavigate } from "react-router-dom";
 
 const buttonStyle = {
-  color: "rgb(232,125,180)",
+  color: "#ED187C",
   textDecoration: "underline",
   border: "none",
+  // textTransfrom: "lowercase !important",
+  textTransform: "unset !important",
   "&:hover": {
     textDecoration: "underline",
-    border: "none"
+    border: "none",
+    backgroundColor: "black",
   },
 };
 
 function EditSection() {
-    const allergicTo = useSelector((state: any) => state.allergic.value);
-    const requirements = useSelector((state: any) => state.requirements.value);
+  const allergicTo = useSelector((state: any) => state.allergic.value);
+  const requirements = useSelector((state: any) => state.requirements.value);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    // Function to navigate to the /allergic route
-    const goToAllergicRoute = () => {
-      navigate('/allergic');
-    };
-    const goToRequirementsRoute = () => {
-      navigate('/requirements');
-    };
-  
+  // Function to navigate to the /allergic route
+  const goToAllergicRoute = () => {
+    navigate("/allergic");
+  };
+  const goToRequirementsRoute = () => {
+    navigate("/requirements");
+  };
+
   // console.log("props", props);
   return (
     <Container>
-      <Grid container spacing={1}>
-        <Grid item xs={6}>
-          <Typography variant="body1">Dietary: {requirements }</Typography>
-        </Grid>
-        <Grid item xs={6}>
-                  {/* Use onClick to trigger the navigation */}
-                  <Button
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "5px",
+          fontSize: "20px",
+        }}
+      >
+        <div>
+          <Typography variant="h6">Dietary: {requirements}</Typography>
+        </div>
+        <div>
+          {/* Use onClick to trigger the navigation */}
+          <Button
             variant="outlined"
             color="primary"
             sx={buttonStyle}
             onClick={goToRequirementsRoute}
           >
-            Edit
+            <Typography variant="h6">Edit</Typography>
           </Button>
-
-        </Grid>
-        <Grid item xs={6}>
-          <Typography variant="body1">Allergens:  {allergicTo}</Typography>
-        </Grid>
-        <Grid item xs={6}>
-                  {/* Use onClick to trigger the navigation */}
-                  <Button
+        </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div>
+          <Typography variant="h6">Allergens: {allergicTo}</Typography>
+        </div>
+        <div>
+          {/* Use onClick to trigger the navigation */}
+          <Button
             variant="outlined"
             color="primary"
             sx={buttonStyle}
             onClick={goToAllergicRoute}
           >
-            Edit
+            <Typography variant="h6">Edit</Typography>
           </Button>
-
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </Container>
   );
 }
