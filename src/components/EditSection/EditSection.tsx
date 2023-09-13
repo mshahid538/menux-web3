@@ -35,7 +35,7 @@ function EditSection() {
 
   // console.log("props", props);
   return (
-    <Container style={{ margin: "auto" }}>
+    <Container style={{ margin: "auto", padding: "auto" }}>
       <div
         style={{
           display: "flex",
