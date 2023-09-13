@@ -35,45 +35,47 @@ function EditSection() {
 
   // console.log("props", props);
   return (
-    <Container>
+    <Container style={{ margin: "auto" }}>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          marginTop: "5px",
-          fontSize: "20px",
+          // marginTop: "auto",
+          // fontSize: "20px",
         }}
       >
-        <div>
-          <Typography variant="h6">Dietary: {requirements}</Typography>
-        </div>
-        <div>
-          {/* Use onClick to trigger the navigation */}
-          <Button
-            variant="outlined"
-            color="primary"
-            sx={buttonStyle}
-            onClick={goToRequirementsRoute}
-          >
-            <Typography variant="h6">Edit</Typography>
-          </Button>
-        </div>
+        <Typography className="smallLineHeight" variant="h6">
+          Dietary: {requirements}
+        </Typography>
+
+        {/* Use onClick to trigger the navigation */}
+        <Button
+          variant="outlined"
+          color="primary"
+          sx={buttonStyle}
+          onClick={goToRequirementsRoute}
+        >
+          <Typography variant="h6" className="smallLineHeight">
+            Edit
+          </Typography>
+        </Button>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>
-          <Typography variant="h6">Allergens: {allergicTo}</Typography>
-        </div>
-        <div>
-          {/* Use onClick to trigger the navigation */}
-          <Button
-            variant="outlined"
-            color="primary"
-            sx={buttonStyle}
-            onClick={goToAllergicRoute}
-          >
-            <Typography variant="h6">Edit</Typography>
-          </Button>
-        </div>
+        <Typography className="smallLineHeight" variant="h6">
+          Allergens: {allergicTo}
+        </Typography>
+
+        {/* Use onClick to trigger the navigation */}
+        <Button
+          variant="outlined"
+          color="primary"
+          sx={buttonStyle}
+          onClick={goToAllergicRoute}
+        >
+          <Typography variant="h6" className="smallLineHeight">
+            Edit
+          </Typography>
+        </Button>
       </div>
     </Container>
   );

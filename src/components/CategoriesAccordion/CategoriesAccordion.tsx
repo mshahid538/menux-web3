@@ -82,7 +82,7 @@ function CategoriesAccordion({ name }: any) {
           border: "2px solid black",
           textTransform: "capitalize",
           borderRadius: "10px",
-          height: "10vh",
+          height: "7vh",
           fontSize: 24,
           display: "flex",
           textAlign: "start",
@@ -106,9 +106,20 @@ function CategoriesAccordion({ name }: any) {
             <Accordion
               key={index}
               expanded={expandedIndexChild === index} // Control expanded state
-              style={{ backgroundColor: "white", minWidth: "380px" }}
+              style={{
+                backgroundColor: "white",
+                minWidth: "380px",
+                border: "2px solid black",
+                borderRadius: "10px",
+              }}
             >
-              <AccordionSummary>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "black" }} />}
+                aria-controls="panel-content"
+                id="panel-header"
+                className="btn"
+                style={{ background: "#F6F7F9" }}
+              >
                 <Box
                   key={index}
                   display={"flex"}
@@ -119,14 +130,14 @@ function CategoriesAccordion({ name }: any) {
                 >
                   <Button
                     sx={{
-                      background: "#F6F7F9",
+                      // background: "#F6F7F9",
                       color: "black",
-                      width: "370px",
+                      width: "100%",
                       fontWeight: "bold",
-                      border: "2px solid black",
-                      textTransform: "capitalize",
-                      borderRadius: "10px",
-                      height: "10vh",
+                      // border: "2px solid black",
+                      textTransform: "none",
+                      // borderRadius: "10px",
+                      height: "7vh",
                       fontSize: 24,
                       display: "flex",
                       textAlign: "start",
@@ -160,19 +171,27 @@ function CategoriesAccordion({ name }: any) {
                     // defaultExpanded={true}
                     key={ind}
                     expanded={expandedIndexSubchild === ind}
-                    style={{ backgroundColor: "white", minWidth: "380px" }}
+                    style={{
+                      backgroundColor: "white",
+                      minWidth: "380px",
+                      border: "2px solid black",
+                      borderRadius: "10px",
+                    }}
                   >
-                    <AccordionSummary>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon sx={{ color: "blue" }} />}
+                      aria-controls="panel-content"
+                      id="panel-header"
+                      className="btn"
+                      style={{ background: "#F6F7F9" }}
+                    >
                       <Button
                         sx={{
-                          background: "#F6F7F9",
                           color: "black",
-                          width: "350px",
+                          width: "100%",
                           fontWeight: "bold",
-                          border: "2px solid black",
-                          textTransform: "capitalize",
-                          borderRadius: "10px",
-                          height: "10vh",
+                          textTransform: "none",
+                          height: "7vh",
                           fontSize: 24,
                           display: "flex",
                           textAlign: "start",
