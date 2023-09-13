@@ -17,8 +17,8 @@
   font-family: louis-george-cafe-bold;
   src: url('./fonts/louis-george-cafe.bold.ttf') format('truetype');
   /* Add more font formats if necessary */
-  font-weight: normal;
-  font-style: normal;
+  font-weight: bold;
+  font-style:normal;
 }
 
 @font-face {
