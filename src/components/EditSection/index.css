@@ -1,0 +1,7 @@
+.edit {
+  background: white;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  height: 9vh;
+}

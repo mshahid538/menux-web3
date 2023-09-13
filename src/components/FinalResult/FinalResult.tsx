@@ -10,6 +10,7 @@ import ProductAccordion from "../ProductAccordion/ProductAccordion";
 import { useSelector } from "react-redux";
 import { displayAllergiesForRestaurantCategoryAndProduct } from "../../utils";
 import { Data } from "../../data/data";
+import EditSection from "../EditSection/EditSection";
 
 type AllergenInfo = {
   restaurantName: string;
@@ -164,6 +165,9 @@ function FinalResult() {
       <Grid className="header">
         <Header />
       </Grid>
+      <Grid className="edit">
+       <EditSection  />
+      </Grid>
       <Box my={3}>
         {/* {allergenInfo && (
           <div>
@@ -316,12 +320,18 @@ function FinalResult() {
               </Typography>
             </Box>
             <CategoriesAccordion
-              name={" - Mains"}
+              name={" - Food"}
               title={"Cookie"}
               subtitle={"VEGAN Milk Chocolate"}
             />
             <ProductAccordion
               name={"- Pan Fried Chicken Breast"}
+              title={"Mains"}
+              subtitle={"Soup"}
+              callback={handleCallback}
+            />
+            <ProductAccordion
+              name={"- Drinks"}
               title={"Mains"}
               subtitle={"Soup"}
               callback={handleCallback}

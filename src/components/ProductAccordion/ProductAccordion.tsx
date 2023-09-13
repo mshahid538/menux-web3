@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../../app/features/product/productSlice";
 
 function ProductAccordion({ name , callback}: any) {
+  console.log("ProductAccordion", name)
   const product = useSelector((state: any) => state.product.product);
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
@@ -32,6 +33,9 @@ function ProductAccordion({ name , callback}: any) {
   }
   
 
+  {
+    console.log("ResultsTwo", ResultsTwo)
+  }
   return (
     <>
     <Accordion  defaultExpanded={true} style={{ backgroundColor: "white", minWidth: "400px"  }}>
@@ -66,6 +70,7 @@ function ProductAccordion({ name , callback}: any) {
       </AccordionSummary>
 
       <Box my={3}>
+      
         {ResultsTwo.map((name, index) => (
           <Box
             key={index}
