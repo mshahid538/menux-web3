@@ -11,6 +11,7 @@ import { Results1 } from "../../constants/Results1";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../app/features/category/categorySlice";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 import { Data } from "../../data/data";
 
@@ -22,7 +23,7 @@ const res = Data.restaurants.map((restaurant) => {
   return restaurant;
 });
 
-console.log("Khawar", res);
+console.log("main", res);
 
 function CategoriesAccordion({ name }: any) {
   console.log("CategoriesAccordion", name);
@@ -212,6 +213,7 @@ function CategoriesAccordion({ name }: any) {
                               mt={1}
                               fontWeight={"bold"}
                               justifySelf={"start"}
+                              textAlign={"left"}
                               fontSize={24}
                             >
                               Description:
@@ -220,7 +222,7 @@ function CategoriesAccordion({ name }: any) {
                               fontSize={24}
                               variant="subtitle1"
                               mt={1}
-                              fontWeight={"normal"}
+                              fontWeight={"bold"}
                               display={"grid"}
                               textAlign={"start"}
                               justifySelf={"start"}
@@ -288,6 +290,68 @@ function CategoriesAccordion({ name }: any) {
                               // color={"#13BF5B"}
                             >
                               Free From
+                            </Typography>
+                          </Grid>
+
+                          <br />
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                          >
+                            <InfoIcon
+                              sx={{
+                                color: "#13BF5B",
+                                backgroundColor: "black",
+                                borderRadius: "50%",
+                              }}
+                            />
+                            <Typography
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                              // color={"#13BF5B"}
+                            >
+                              Ask To Modify
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                          >
+                            <InfoIcon
+                              sx={{
+                                color: "#ED187C",
+                                backgroundColor: "black",
+                                borderRadius: "50%",
+                              }}
+                            />
+                            <Typography
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                              // color={"#13BF5B"}
+                            >
+                              Cross Contamination
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                          >
+                            <CancelIcon
+                              sx={{
+                                color: "#ED187C",
+                                backgroundColor: "black",
+                                borderRadius: "50%",
+                              }}
+                            />
+                            <Typography
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                              // color={"#13BF5B"}
+                            >
+                              Ask To Modify
                             </Typography>
                           </Grid>
                         </Box>
