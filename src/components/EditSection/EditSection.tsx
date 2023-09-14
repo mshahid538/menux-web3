@@ -44,7 +44,12 @@ function EditSection() {
           // fontSize: "20px",
         }}
       >
-        <Typography className="smallLineHeight" variant="h6">
+        <Typography
+          className="smallLineHeight"
+          variant="subtitle1"
+          fontWeight={"bold"}
+          fontSize={20}
+        >
           Dietary: {requirements}
         </Typography>
 
@@ -55,13 +60,23 @@ function EditSection() {
           sx={buttonStyle}
           onClick={goToRequirementsRoute}
         >
-          <Typography variant="h6" className="smallLineHeight">
+          <Typography
+            className="smallLineHeight"
+            variant="subtitle1"
+            fontWeight={"bold"}
+            fontSize={20}
+          >
             Edit
           </Typography>
         </Button>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography className="smallLineHeight" variant="h6">
+        <Typography
+          className="smallLineHeight"
+          variant="subtitle1"
+          fontWeight={"bold"}
+          fontSize={20}
+        >
           Allergens: {allergicTo}
         </Typography>
 
@@ -72,7 +87,12 @@ function EditSection() {
           sx={buttonStyle}
           onClick={goToAllergicRoute}
         >
-          <Typography variant="h6" className="smallLineHeight">
+          <Typography
+            className="smallLineHeight"
+            variant="subtitle1"
+            fontWeight={"bold"}
+            fontSize={20}
+          >
             Edit
           </Typography>
         </Button>
