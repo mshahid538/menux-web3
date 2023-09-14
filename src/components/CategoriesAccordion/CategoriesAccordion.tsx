@@ -297,7 +297,18 @@ function CategoriesAccordion({ name }: any) {
                             </Typography>
                           </Grid>
 
-                          <br />
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                            ml={1.75}
+                          >
+                            <Typography variant="subtitle1" fontSize={20}>
+                              Fish, Crustaceans, Molluscs, Celery, Mustard,
+                              Lupin, Sesame Seeds, Sulphite,
+                            </Typography>
+                          </Grid>
+
                           <Grid
                             display={"flex"}
                             alignItems={"center"}
@@ -318,6 +329,18 @@ function CategoriesAccordion({ name }: any) {
                               Ask To Modify
                             </Typography>
                           </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                            // ml={2}
+                            pl={3}
+                          >
+                            <Typography variant="subtitle1" fontSize={20}>
+                              Milk, Soya
+                            </Typography>
+                          </Grid>
+
                           <Grid
                             display={"flex"}
                             alignItems={"center"}

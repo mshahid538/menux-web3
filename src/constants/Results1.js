@@ -7,6 +7,16 @@ export const Results1 = [
         name: "Pan Fried Chicken Breast",
         notSuitable: ["Vegetarian", "Vegan"],
         mayContain: ["Nuts", "Milk"],
+        freeFrom: [
+          "Fish",
+          "Crustaceans",
+          "Molluscs",
+          "Celery",
+          "Mustard",
+          "Lupin",
+          "Sesame Seeds",
+          "Sulphite",
+        ],
       },
       {
         id: 2,
