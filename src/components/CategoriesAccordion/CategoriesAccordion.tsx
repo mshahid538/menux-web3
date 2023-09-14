@@ -66,7 +66,7 @@ function CategoriesAccordion({ name }: any) {
   console.log("Results1", Results1);
   return (
     <Accordion
-      defaultExpanded={true}
+      // defaultExpanded={true}
       style={{ backgroundColor: "white", minWidth: "400px" }}
     >
       <AccordionSummary
@@ -96,8 +96,9 @@ function CategoriesAccordion({ name }: any) {
           },
         }}
       >
+        {/* category (Food )  */}
         <Typography fontWeight={"bold"} fontSize={"24px"}>
-          {name}
+          + {name}
         </Typography>
       </AccordionSummary>
 
@@ -145,12 +146,13 @@ function CategoriesAccordion({ name }: any) {
                     }`}
                     onClick={() => handleClickChild(index, name.name)}
                   >
+                    {/* subcategory (Starter, Creekstones, Main, etc )  */}
                     <Typography
                       variant="body1"
                       fontSize={"24px"}
                       fontWeight={"bold"}
                     >
-                      + {name.name}
+                      {expandedIndexChild === index ? " - " : " + "} {name.name}
                     </Typography>
                   </Button>
                 </Box>
@@ -191,12 +193,14 @@ function CategoriesAccordion({ name }: any) {
                         }`}
                         onClick={() => handleClickSubChild(ind, name.name)}
                       >
+                        {/* Product (chiken breast, beef ribs, dynamite prawns, etc )  */}
                         <Typography
                           variant="body1"
                           fontSize={"24px"}
                           fontWeight={"bold"}
                         >
-                          + {ite.name}
+                          {expandedIndexSubchild === ind ? " - " : " + "}
+                          {ite.name}
                         </Typography>
                       </Button>
                     </AccordionSummary>

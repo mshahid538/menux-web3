@@ -57,7 +57,7 @@ function ProductAccordion({ name, callback }: any) {
   return (
     <>
       <Accordion
-        defaultExpanded={true}
+        // defaultExpanded={true}
         style={{ backgroundColor: "white", minWidth: "400px" }}
       >
         <AccordionSummary
@@ -87,8 +87,9 @@ function ProductAccordion({ name, callback }: any) {
             },
           }}
         >
+          {/* category (Drink)  */}
           <Typography fontWeight={"bold"} fontSize={"24px"}>
-            {name}
+            + {name}
           </Typography>
         </AccordionSummary>
 

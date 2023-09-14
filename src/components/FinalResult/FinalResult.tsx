@@ -323,7 +323,7 @@ function FinalResult() {
               </Typography>
             </Box> */}
             <CategoriesAccordion
-              name={" - Food"}
+              name={" Food"}
               title={"Cookie"}
               subtitle={"VEGAN Milk Chocolate"}
             />
@@ -334,7 +334,7 @@ function FinalResult() {
               callback={handleCallback}
             /> */}
             <ProductAccordion
-              name={"- Drinks"}
+              name={" Drinks"}
               title={"Mains"}
               subtitle={"Soup"}
               callback={handleCallback}
