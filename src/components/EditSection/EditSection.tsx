@@ -77,7 +77,7 @@ function EditSection() {
           fontWeight={"bold"}
           fontSize={20}
         >
-          Allergens: {allergicTo}
+          Allergens: {allergicTo.join(", ")}
         </Typography>
 
         {/* Use onClick to trigger the navigation */}

@@ -1,19 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
-}
+  value: [],
+};
 
 export const counterSlice = createSlice({
-  name: 'allergic',
+  name: "allergic",
   initialState,
   reducers: {
-    allergicBy: (state, action) => {
-      state.value = action.payload
-    },
+    allergicBy: (state, action) => ({
+      ...state,
+      value: [...state.value, action.payload],
+    }),
   },
-})
+});
 
-export const {  allergicBy } = counterSlice.actions
+export const { allergicBy } = counterSlice.actions;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;
