@@ -17,7 +17,7 @@ const buttonStyle = {
   "&:hover": {
     textDecoration: "underline",
     border: "none",
-    backgroundColor: "black",
+    // backgroundColor: "black",
   },
 };
 
@@ -53,9 +53,14 @@ function EditSection() {
   // Function to navigate to the /allergic route
   const goToAllergicRoute = () => {
     navigate("/allergic");
+    localStorage.removeItem("allergic");
+    window.location.reload();
   };
   const goToRequirementsRoute = () => {
     navigate("/requirements");
+    localStorage.removeItem("dietary");
+    localStorage.removeItem("allergic");
+    window.location.reload();
   };
 
   // console.log("props", props);
@@ -74,6 +79,7 @@ function EditSection() {
           variant="subtitle1"
           fontWeight={"bold"}
           fontSize={20}
+          textAlign={"left"}
         >
           Dietary: {require}
         </Typography>
@@ -101,6 +107,7 @@ function EditSection() {
           variant="subtitle1"
           fontWeight={"bold"}
           fontSize={20}
+          textAlign={"left"}
         >
           Allergens: {allergicTo?.join(", ")}
         </Typography>

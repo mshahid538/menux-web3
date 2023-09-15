@@ -3,7 +3,9 @@
   width: 100% !important;
   display: flex;
   justify-content: center;
-  height: 12vh;
+  height: auto;
+  padding-bottom: 0.75rem !important;
+  padding-top: 0.75rem !important;
 }
 .smallLineHeight {
   line-height: 1 !important;
