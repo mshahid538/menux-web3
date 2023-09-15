@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 'Uncategorized', // Initial category value
+  value: "", // Initial category value
 };
 
 export const requirementsSlice = createSlice({
-  name: 'requirements',
+  name: "requirements",
   initialState,
   reducers: {
     setRequirements: (state, action) => {

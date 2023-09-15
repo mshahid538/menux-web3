@@ -3,8 +3,10 @@ import "./index.css";
 import { Box } from "@mui/material";
 // import { Grid } from "@mui/material";
 import { Container, Grid, Typography, Button } from "@mui/material";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { allergicBy } from "../../app/features/allergicTo/counterSlice";
+import { setRequirements } from "../../app/features/requirements/requirementsSlice";
 
 const buttonStyle = {
   color: "#ED187C",
@@ -20,8 +22,31 @@ const buttonStyle = {
 };
 
 function EditSection() {
-  const allergicTo = useSelector((state: any) => state.allergic.value);
-  const requirements = useSelector((state: any) => state.requirements.value);
+  const dispatch = useDispatch();
+
+  const allergicTo = useSelector((state: any) => {
+    console.log("state.allergic.value", state.allergic.value);
+    if (state.allergic.value.length > 0) {
+      return state.allergic.value;
+    } else {
+      let aa = JSON.parse(localStorage.getItem("allergic") || "[]");
+      console.log("aa", aa);
+      // if (aa) {
+      dispatch(allergicBy(aa));
+      // }
+    }
+  });
+  const require = useSelector((state: any) => {
+    console.log("state.requirements.value", state.requirements.value);
+
+    if (state.requirements.value) {
+      return state.requirements.value;
+    } else {
+      let bb = localStorage.getItem("dietary") || "";
+      console.log("bb", bb);
+      dispatch(setRequirements(bb));
+    }
+  });
 
   const navigate = useNavigate();
 
@@ -50,7 +75,7 @@ function EditSection() {
           fontWeight={"bold"}
           fontSize={20}
         >
-          Dietary: {requirements}
+          Dietary: {require}
         </Typography>
 
         {/* Use onClick to trigger the navigation */}
@@ -77,7 +102,7 @@ function EditSection() {
           fontWeight={"bold"}
           fontSize={20}
         >
-          Allergens: {allergicTo.join(", ")}
+          Allergens: {allergicTo?.join(", ")}
         </Typography>
 
         {/* Use onClick to trigger the navigation */}

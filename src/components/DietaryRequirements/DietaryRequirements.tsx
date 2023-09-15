@@ -19,6 +19,23 @@ function DietaryRequirements() {
     });
     setData(name);
 
+    // if (localStorage.getItem("dietary")) {
+    //   let dietaryVal = JSON.parse(localStorage.getItem("dietary") || "");
+    //   dietaryVal = [...dietaryVal, name];
+    //   // allergicVal = allergicVal.forEach((element: any) => {
+    //   //   if (element !== name) {
+    //   //     return element;
+    //   //   }
+    //   // });
+    //   localStorage.setItem("dietary", JSON.stringify(dietaryVal));
+    // } else {
+    //   localStorage.setItem("dietary", JSON.stringify([name]));
+    // }
+
+    if (name) {
+      localStorage.setItem("dietary", name);
+    }
+
     dispatch(setRequirements(name));
     console.log(req + "++++");
     console.log("____________");

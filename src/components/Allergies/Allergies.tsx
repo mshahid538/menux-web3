@@ -27,7 +27,20 @@ function Allergies() {
     });
 
     setAllergicTo(name);
-    dispatch(allergicBy(name));
+    if (localStorage.getItem("allergic")) {
+      let allergicVal = JSON.parse(localStorage.getItem("allergic") || "");
+      allergicVal = [...allergicVal, name];
+      // allergicVal = allergicVal.forEach((element: any) => {
+      //   if (element !== name) {
+      //     return element;
+      //   }
+      // });
+      localStorage.setItem("allergic", JSON.stringify(allergicVal));
+    } else {
+      localStorage.setItem("allergic", JSON.stringify([name]));
+    }
+    dispatch(allergicBy([name]));
+    console.log("khawar", name);
   }
   function handleUserClick(index: number) {
     setIndexes((prevIndexes) => {
