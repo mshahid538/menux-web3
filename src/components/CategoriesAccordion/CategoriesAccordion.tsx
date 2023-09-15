@@ -365,6 +365,17 @@ function CategoriesAccordion({ name }: any) {
                             display={"flex"}
                             alignItems={"center"}
                             gap={0.5}
+                            // ml={2}
+                            pl={3}
+                          >
+                            <Typography variant="subtitle1" fontSize={20}>
+                              Nuts, Peanuts, Eggs
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
                           >
                             <CancelIcon
                               sx={{
@@ -378,7 +389,18 @@ function CategoriesAccordion({ name }: any) {
                               fontWeight={"bold"}
                               // color={"#13BF5B"}
                             >
-                              Ask To Modify
+                              Contains
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            display={"flex"}
+                            alignItems={"center"}
+                            gap={0.5}
+                            // ml={2}
+                            pl={3}
+                          >
+                            <Typography variant="subtitle1" fontSize={20}>
+                              Cereals W Gluten
                             </Typography>
                           </Grid>
                         </Box>
