@@ -11,9 +11,7 @@ function Cookies() {
         <Box sx={{ marginTop: "-22px" }}>
           <ListBox />
         </Box>
-        <Box>
-          <ReqBox />
-        </Box>
+        <Box>{/* <ReqBox /> */}</Box>
         <Box display={"flex"} justifyContent={"center"}>
           <SwitchBox />
         </Box>
