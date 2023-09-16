@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Header from "../Header/Header";
-import { DietaryReq } from "../../constants/DietaryReq";
+import { DietaryReq } from "../../data/data.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./index.css";
@@ -53,7 +53,7 @@ function DietaryRequirements() {
                 "&:hover": {
                   background: "#66BC48",
                   fontSize: "24px",
-                  color: "white"
+                  color: "white",
                 },
               }}
               className={`select ${

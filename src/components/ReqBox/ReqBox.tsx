@@ -21,28 +21,18 @@ export default function ReqBox() {
   const allergicTo = useSelector((state: any) => state.allergic.value);
   const requirements = useSelector((state: any) => state.requirements.value);
   return (
-    <Card sx={{ minWidth: 275, marginTop: 3 }} >
+    <Card sx={{ minWidth: 275, marginTop: 3 }}>
       <CardContent sx={{ marginBottom: "-16px" }}>
-        <Typography variant="body2" fontWeight={"bold"} sx={{display: 'flex', textAlign:"start"}} >
+        <Typography
+          variant="body2"
+          fontWeight={"bold"}
+          sx={{ display: "flex", textAlign: "start" }}
+        >
           Your dietary requirements/allergens:
         </Typography>
       </CardContent>
       <CardActions sx={{ marginLeft: 1 }}>
         <Box display={"flex"} gap={2}>
-          <Button
-            sx={{
-              background: "#F6F7F9",
-              color: "#5E615E",
-              width: "120%",
-              textTransform: "capitalize",
-              "&:hover": {
-                background: "#F6F7F9",
-                fontSize: "14px",
-              },
-            }}
-          >
-             {allergicTo  ? allergicTo : <>Vegetarian</>}
-          </Button>
           <Button
             sx={{
               background: "#F6F7F9",
@@ -55,7 +45,22 @@ export default function ReqBox() {
               },
             }}
           >
-              {requirements  ? requirements : <>Milk</>}
+            {requirements ? requirements : <>Milk</>}
+          </Button>
+          <Button
+            sx={{
+              background: "#F6F7F9",
+              color: "#5E615E",
+              width: "120%",
+              textTransform: "capitalize",
+              "&:hover": {
+                background: "#F6F7F9",
+                fontSize: "14px",
+              },
+            }}
+          >
+            {allergicTo ? allergicTo.join(", ") : <>Vegetarian</>}
+            {console.log("allergicTo", allergicTo)}
           </Button>
         </Box>
       </CardActions>

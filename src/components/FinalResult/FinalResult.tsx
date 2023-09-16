@@ -10,6 +10,7 @@ import ProductAccordion from "../ProductAccordion/ProductAccordion";
 import { useSelector } from "react-redux";
 import { displayAllergiesForRestaurantCategoryAndProduct } from "../../utils";
 import { Data } from "../../data/data";
+import EditSection from "../EditSection/EditSection";
 
 type AllergenInfo = {
   restaurantName: string;
@@ -159,10 +160,16 @@ function FinalResult() {
     console.log("Hello Callback");
   }
   return (
-    <Box sx={{ width: "100%" }} onClick={() => console.log(requirements)}>
+    <Box
+      sx={{ width: "100%", backgroundColor: "white" }}
+      onClick={() => console.log(requirements)}
+    >
       {/* <Button onClick={handleReduxData}>Test Collected Data</Button> */}
       <Grid className="header">
         <Header />
+      </Grid>
+      <Grid className="edit">
+        <EditSection />
       </Grid>
       <Box my={3}>
         {/* {allergenInfo && (
@@ -196,7 +203,7 @@ function FinalResult() {
             margin={"0 auto"}
             width={"60%"}
           >
-            <Button
+            {/* <Button
               className="btn"
               sx={{
                 background: "#ED187C",
@@ -256,7 +263,7 @@ function FinalResult() {
                 justifySelf={"start"}
                 fontSize={24}
               >
-                Description:
+                Description22:
               </Typography>
               <Typography
                 fontSize={24}
@@ -314,14 +321,20 @@ function FinalResult() {
                 {allergenInfo && allergenInfo.mayContain.join(", ")}
                 {!allergenInfo && <>Milk</>}
               </Typography>
-            </Box>
+            </Box> */}
             <CategoriesAccordion
-              name={" - Mains"}
+              name={" Food"}
               title={"Cookie"}
               subtitle={"VEGAN Milk Chocolate"}
             />
-            <ProductAccordion
+            {/* <ProductAccordion
               name={"- Pan Fried Chicken Breast"}
+              title={"Mains"}
+              subtitle={"Soup"}
+              callback={handleCallback}
+            /> */}
+            <ProductAccordion
+              name={" Drinks"}
               title={"Mains"}
               subtitle={"Soup"}
               callback={handleCallback}

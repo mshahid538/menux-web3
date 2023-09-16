@@ -2,7 +2,7 @@ import base from "@emotion/styled/types/base";
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import Header from "../Header/Header";
 import "./index.css";
-import { AllergicList } from "../../constants/AllergicList";
+import { AllergicList } from "../../data/data.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DietaryType } from "../../constants/DietaryTypes";
@@ -10,21 +10,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { allergicBy } from "../../app/features/allergicTo/counterSlice";
 import { allergic } from "../../app/features/allergic/allergicSlice";
 function Allergies() {
-  const count = useSelector((state: any) => state.allergic.value)
+  const count = useSelector((state: any) => state.allergic.value);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [Indexes, setIndexes] = useState<number[]>([]);
-  const [allergicTo , setAllergicTo] = useState("");
+  const [allergicTo, setAllergicTo] = useState("");
 
-  function handleClick(index: number , name: string) {
+  function handleClick(index: number, name: string) {
     setActiveIndexes((prevIndexes) => {
       if (prevIndexes.includes(index)) {
         return prevIndexes.filter((i) => i !== index);
       } else {
         return [...prevIndexes, index];
       }
-      
     });
 
     setAllergicTo(name);
@@ -40,15 +39,14 @@ function Allergies() {
     });
   }
 
-  const handleAllergicTo = (amount:any) => {
-    console.log("++")
+  const handleAllergicTo = (amount: any) => {
+    console.log("++");
     dispatch(allergicBy(allergicTo));
-    console.log(count)
-      
+    console.log(count);
   };
-  console.log("Counter value: " + count)
+  console.log("Counter value: " + count);
   // const data = useSelector((state: any) => state.allergicTo.value);
-      
+
   // console.log("Allergic Data: " + data)
   return (
     <Box sx={{ width: "100%" }}>
@@ -56,7 +54,6 @@ function Allergies() {
         <Header />
       </Grid>
       <Box>
-
         <Grid className="input" my={3}>
           <Typography variant="body2" fontWeight={"bold"} fontSize={24}>
             I am allergic to.
@@ -88,7 +85,7 @@ function Allergies() {
                   className={`select ${
                     activeIndexes.includes(index) ? "active" : ""
                   }`}
-                  onClick={() => handleClick(index , data.name)}
+                  onClick={() => handleClick(index, data.name)}
                   display={"grid"}
                 >
                   <img

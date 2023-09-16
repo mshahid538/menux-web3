@@ -1,5 +1,3 @@
-
-
 /* @font-face {
   font-family: 'louis-george-cafe-bold-italic';
   src: URL('./fonts/louis-george-cafe.bold-italic.ttf') format('truetype');
@@ -7,7 +5,7 @@
 
 @font-face {
   font-family: louis-george-cafe-bold-italic;
-  src: url('./fonts/louis-george-cafe.bold-italic.ttf') format('truetype');
+  src: url("./fonts/louis-george-cafe.bold-italic.ttf") format("truetype");
   /* Add more font formats if necessary */
   font-weight: normal;
   font-style: normal;
@@ -15,30 +13,28 @@
 
 @font-face {
   font-family: louis-george-cafe-bold;
-  src: url('./fonts/louis-george-cafe.bold.ttf') format('truetype');
+  src: url("./fonts/louis-george-cafe.bold.ttf") format("truetype");
   /* Add more font formats if necessary */
-  font-weight: normal;
-  font-style: normal;
+  font-weight: bold;
+  font-style:normal;
 }
 
 @font-face {
   font-family: louis-george-cafe-regular;
-  src: url('./fonts/louis-george-cafe.regular.ttf') format('truetype');
+  src: url("./fonts/louis-george-cafe.regular.ttf") format("truetype");
   /* Add more font formats if necessary */
   font-weight: normal;
   font-style: normal;
 }
 
-
-
 .App {
   display: flex;
   justify-content: center;
-  background: #F3F3F3;
+  background: #f3f3f3;
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  font-family: 'louis-george-cafe-bold-italic';
+  font-family: "louis-george-cafe-bold-italic";
 }
 
 /* p , h1 ,h2,h3 {
@@ -46,18 +42,21 @@
   color: red !important;
 } */
 
-.p{
-  font-family: 'louis-george-cafe-bold-italic';
+.p {
+  font-family: "louis-george-cafe-bold-italic";
   color: green !important;
 }
 
-.viewport{
+.viewport {
   width: 470px;
+  border-left: 1px solid #c5aeae;
+  border-right: 1px solid #c5aeae;
+  border-bottom: 1px solid #c5aeae;
 }
 @media only screen and (min-width: 100px) and (max-width: 768px) {
-.btn{
-  width: 200px !important;
-}
+  .btn {
+    width: 200px !important;
+  }
 }
 .App-logo {
   height: 40vmin;

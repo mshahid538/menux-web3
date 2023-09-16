@@ -1,4 +1,4 @@
-import { AllergicList } from "../../constants/AllergicList";
+import { AllergicList } from "../../data/data.js";
 import React, { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import "./index.css";
@@ -18,26 +18,33 @@ function AllergicBox() {
 
   return (
     <div>
-      <Box sx={{ display: "flex", textAlign: "center", justifyContent: "center" ,flexDirection: "row" }}>
+      <Box
+        sx={{
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "center",
+          flexDirection: "row",
+        }}
+      >
         <Grid container>
-        {AllergicList.map((data, index) => (
-          <Grid item lg={3} key={index}>
-            <Box
-              className={`select ${
-                activeIndexes.includes(index) ? "active" : ""
-              }`}
-              onClick={() => handleClick(index)}
-            >
-              <img
-                height={"60px"}
-                className="icon"
-                src={data.icon}
-                alt={data.name}
-              />
-            </Box>
-            <Typography mt={1}>{data.name}</Typography>
-          </Grid>
-        ))}
+          {AllergicList.map((data, index) => (
+            <Grid item lg={3} key={index}>
+              <Box
+                className={`select ${
+                  activeIndexes.includes(index) ? "active" : ""
+                }`}
+                onClick={() => handleClick(index)}
+              >
+                <img
+                  height={"60px"}
+                  className="icon"
+                  src={data.icon}
+                  alt={data.name}
+                />
+              </Box>
+              <Typography mt={1}>{data.name}</Typography>
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </div>
