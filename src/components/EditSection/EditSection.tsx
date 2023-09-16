@@ -108,6 +108,7 @@ function EditSection() {
           fontWeight={"bold"}
           fontSize={20}
           textAlign={"left"}
+          lineHeight="1.25 !important"
         >
           Allergens: {allergicTo?.join(", ")}
         </Typography>
