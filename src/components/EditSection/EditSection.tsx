@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
-import { Box } from "@mui/material";
-// import { Grid } from "@mui/material";
-import { Container, Grid, Typography, Button } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { allergicBy } from "../../app/features/allergicTo/counterSlice";
@@ -12,58 +10,45 @@ const buttonStyle = {
   color: "#ED187C",
   textDecoration: "underline",
   border: "none",
-  // textTransfrom: "lowercase !important",
   textTransform: "unset !important",
   "&:hover": {
     textDecoration: "underline",
     border: "none",
-    // backgroundColor: "black",
   },
 };
 
 function EditSection() {
   const dispatch = useDispatch();
-
-  const allergicTo = useSelector((state: any) => {
-    console.log("state.allergic.value", state.allergic.value);
-    if (state.allergic.value.length > 0) {
-      return state.allergic.value;
-    } else {
-      let aa = JSON.parse(localStorage.getItem("allergic") || "[]");
-      console.log("aa", aa);
-      // if (aa) {
-      dispatch(allergicBy(aa));
-      // }
-    }
-  });
-  const require = useSelector((state: any) => {
-    console.log("state.requirements.value", state.requirements.value);
-
-    if (state.requirements.value) {
-      return state.requirements.value;
-    } else {
-      let bb = localStorage.getItem("dietary") || "";
-      console.log("bb", bb);
-      dispatch(setRequirements(bb));
-    }
-  });
-
   const navigate = useNavigate();
 
-  // Function to navigate to the /allergic route
+  const allergicTo = useSelector((state: any) => state.allergic.value || []);
+
+  const require = useSelector((state: any) => state.requirements.value || "");
+
+  useEffect(() => {
+    // Dispatch actions for initial data retrieval here
+    const aa = JSON.parse(localStorage.getItem("allergic") || "[]");
+    if (aa.length > 0) {
+      dispatch(allergicBy(aa));
+    }
+
+    const bb = localStorage.getItem("dietary") || "";
+    dispatch(setRequirements(bb));
+  }, [dispatch]);
+
   const goToAllergicRoute = () => {
     navigate("/allergic");
     localStorage.removeItem("allergic");
-    window.location.reload();
+    // Remove the window.location.reload() to prevent unnecessary reloading
   };
+
   const goToRequirementsRoute = () => {
     navigate("/requirements");
     localStorage.removeItem("dietary");
     localStorage.removeItem("allergic");
-    window.location.reload();
+    // Remove the window.location.reload() to prevent unnecessary reloading
   };
 
-  // console.log("props", props);
   return (
     <Container style={{ margin: "auto", padding: "auto" }}>
       <div
