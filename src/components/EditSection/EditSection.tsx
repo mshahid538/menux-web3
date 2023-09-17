@@ -1,39 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
-import { Box } from "@mui/material";
-// import { Grid } from "@mui/material";
-import { Container, Grid, Typography, Button } from "@mui/material";
-import { useSelector } from "react-redux";
+import { Container, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { allergicBy } from "../../app/features/allergicTo/counterSlice";
+import { setRequirements } from "../../app/features/requirements/requirementsSlice";
 
 const buttonStyle = {
   color: "#ED187C",
   textDecoration: "underline",
   border: "none",
-  // textTransfrom: "lowercase !important",
   textTransform: "unset !important",
   "&:hover": {
     textDecoration: "underline",
     border: "none",
-    backgroundColor: "black",
   },
 };
 
 function EditSection() {
-  const allergicTo = useSelector((state: any) => state.allergic.value);
-  const requirements = useSelector((state: any) => state.requirements.value);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Function to navigate to the /allergic route
+  const allergicTo = useSelector((state: any) => state.allergic.value || []);
+
+  const require = useSelector((state: any) => state.requirements.value || "");
+
+  useEffect(() => {
+    // Dispatch actions for initial data retrieval here
+    const aa = JSON.parse(localStorage.getItem("allergic") || "[]");
+    if (aa.length > 0) {
+      dispatch(allergicBy(aa));
+    }
+
+    const bb = localStorage.getItem("dietary") || "";
+    dispatch(setRequirements(bb));
+  }, [dispatch]);
+
   const goToAllergicRoute = () => {
     navigate("/allergic");
-  };
-  const goToRequirementsRoute = () => {
-    navigate("/requirements");
+    localStorage.removeItem("allergic");
+    // Remove the window.location.reload() to prevent unnecessary reloading
   };
 
-  // console.log("props", props);
+  const goToRequirementsRoute = () => {
+    navigate("/requirements");
+    localStorage.removeItem("dietary");
+    localStorage.removeItem("allergic");
+    // Remove the window.location.reload() to prevent unnecessary reloading
+  };
+
   return (
     <Container style={{ margin: "auto", padding: "auto" }}>
       <div
@@ -49,8 +64,9 @@ function EditSection() {
           variant="subtitle1"
           fontWeight={"bold"}
           fontSize={20}
+          textAlign={"left"}
         >
-          Dietary: {requirements}
+          Dietary: {require}
         </Typography>
 
         {/* Use onClick to trigger the navigation */}
@@ -76,8 +92,10 @@ function EditSection() {
           variant="subtitle1"
           fontWeight={"bold"}
           fontSize={20}
+          textAlign={"left"}
+          lineHeight="1.25 !important"
         >
-          Allergens: {allergicTo.join(", ")}
+          Allergens: {allergicTo?.join(", ")}
         </Typography>
 
         {/* Use onClick to trigger the navigation */}
