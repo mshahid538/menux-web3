@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../../app/features/product/productSlice";
 
 function ProductAccordion({ name, callback }: any) {
-  console.log("ProductAccordion", name);
   const product = useSelector((state: any) => state.product.product);
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
@@ -52,7 +51,6 @@ function ProductAccordion({ name, callback }: any) {
   };
 
   {
-    console.log("ResultsTwo", ResultsTwo);
   }
   return (
     <>

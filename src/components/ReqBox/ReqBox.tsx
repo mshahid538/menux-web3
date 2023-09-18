@@ -60,7 +60,6 @@ export default function ReqBox() {
             }}
           >
             {allergicTo ? allergicTo.join(", ") : <>Vegetarian</>}
-            {console.log("allergicTo", allergicTo)}
           </Button>
         </Box>
       </CardActions>

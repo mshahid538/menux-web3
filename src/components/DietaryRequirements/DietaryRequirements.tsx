@@ -3,9 +3,11 @@ import Header from "../Header/Header";
 import { DietaryReq } from "../../data/data.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setRequirements } from "../../app/features/requirements/requirementsSlice";
+import { allergicBy } from "../../app/features/allergicTo/counterSlice";
 
 function DietaryRequirements() {
   const req = useSelector((state: any) => state.requirements.value);
@@ -13,32 +15,24 @@ function DietaryRequirements() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [data, setData] = useState<string>("");
 
+  useEffect(() => {
+    if (window.location.pathname === "/requirements") {
+      localStorage.removeItem("dietary");
+      dispatch(allergicBy([]));
+    }
+  }, []);
+
   function handleClick(index: number, name: string) {
     setActiveIndexes((prevIndexes) => {
       return [index];
     });
     setData(name);
 
-    // if (localStorage.getItem("dietary")) {
-    //   let dietaryVal = JSON.parse(localStorage.getItem("dietary") || "");
-    //   dietaryVal = [...dietaryVal, name];
-    //   // allergicVal = allergicVal.forEach((element: any) => {
-    //   //   if (element !== name) {
-    //   //     return element;
-    //   //   }
-    //   // });
-    //   localStorage.setItem("dietary", JSON.stringify(dietaryVal));
-    // } else {
-    //   localStorage.setItem("dietary", JSON.stringify([name]));
-    // }
-
     if (name) {
       localStorage.setItem("dietary", name);
     }
 
     dispatch(setRequirements(name));
-    console.log(req + "++++");
-    console.log("____________");
   }
 
   return (

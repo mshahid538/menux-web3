@@ -23,10 +23,9 @@ const res = Data.restaurants.map((restaurant) => {
   return restaurant;
 });
 
-console.log("main", res);
+// console.log("main", res);
 
 function CategoriesAccordion({ name }: any) {
-  console.log("CategoriesAccordion", name);
   const data = useSelector((state: any) => state.category.category);
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
@@ -63,7 +62,6 @@ function CategoriesAccordion({ name }: any) {
     }
   };
 
-  console.log("Results1", Results1);
   return (
     <Accordion
       // defaultExpanded={true}
