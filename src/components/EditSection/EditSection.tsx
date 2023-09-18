@@ -37,16 +37,24 @@ function EditSection() {
   }, [dispatch]);
 
   const goToAllergicRoute = () => {
-    navigate("/allergic");
+    // Clear the value from local storage
     localStorage.removeItem("allergic");
-    // Remove the window.location.reload() to prevent unnecessary reloading
+
+    // Dispatch an action to reset the value in Redux state to an empty array
+    dispatch(allergicBy([]));
+
+    // Navigate to the "/allergic" route
+    navigate("/allergic");
   };
 
   const goToRequirementsRoute = () => {
-    navigate("/requirements");
+    // Clear the value from local storage
     localStorage.removeItem("dietary");
     localStorage.removeItem("allergic");
-    // Remove the window.location.reload() to prevent unnecessary reloading
+
+    dispatch(allergicBy([]));
+
+    navigate("/requirements");
   };
 
   return (

@@ -9,6 +9,10 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     allergicBy: (state, action) => {
+      // Reset the state to an empty array when an empty array is dispatched
+      if (action.payload.length === 0) {
+        return initialState;
+      }
       const newValues = action.payload;
       const existingValues = state.value;
 
