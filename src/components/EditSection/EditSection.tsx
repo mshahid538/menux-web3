@@ -63,8 +63,6 @@ function EditSection() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          // marginTop: "auto",
-          // fontSize: "20px",
         }}
       >
         <Typography

@@ -46,8 +46,6 @@ function FinalResult() {
   const res = useSelector((state: any) => state.restaurant.value);
 
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
-  console.log(allergicTo);
-  console.log(requirements);
 
   const [restaurantData] = useState(Data);
   const [allergenInfo, setAllergenInfo] = useState<any>(null);
@@ -99,9 +97,6 @@ function FinalResult() {
         ingredients?: string[];
       }[];
     };
-    console.log("+++++++++++++++");
-    console.log(menuCategory);
-    console.log("---------------");
 
     if (!menuCategory) {
       setAllergenInfo({
@@ -157,12 +152,11 @@ function FinalResult() {
 
   function handleCallback() {
     displayAllergiesForRestaurantCategoryAndProduct(res, "Mains", product);
-    console.log("Hello Callback");
   }
   return (
     <Box
       sx={{ width: "100%", backgroundColor: "white" }}
-      onClick={() => console.log(requirements)}
+      // onClick={() => console.log(requirements)}
     >
       {/* <Button onClick={handleReduxData}>Test Collected Data</Button> */}
       <Grid className="header">

@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import "./index.css";
 import { AllergicList } from "../../data/data.js";
 import { useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DietaryType } from "../../constants/DietaryTypes";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +17,13 @@ function Allergies() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [Indexes, setIndexes] = useState<number[]>([]);
   const [allergicTo, setAllergicTo] = useState("");
+
+  useEffect(() => {
+    if (window.location.pathname === "/allergic") {
+      localStorage.removeItem("allergic");
+      dispatch(allergicBy([]));
+    }
+  }, []);
 
   function handleClick(index: number, name: string) {
     setActiveIndexes((prevIndexes) => {
@@ -30,17 +38,11 @@ function Allergies() {
     if (localStorage.getItem("allergic")) {
       let allergicVal = JSON.parse(localStorage.getItem("allergic") || "");
       allergicVal = [...allergicVal, name];
-      // allergicVal = allergicVal.forEach((element: any) => {
-      //   if (element !== name) {
-      //     return element;
-      //   }
-      // });
       localStorage.setItem("allergic", JSON.stringify(allergicVal));
     } else {
       localStorage.setItem("allergic", JSON.stringify([name]));
     }
     dispatch(allergicBy([name]));
-    console.log("khawar", name);
   }
   function handleUserClick(index: number) {
     setIndexes((prevIndexes) => {
@@ -57,10 +59,7 @@ function Allergies() {
     dispatch(allergicBy(allergicTo));
     console.log(count);
   };
-  console.log("Counter value: " + count);
-  // const data = useSelector((state: any) => state.allergicTo.value);
 
-  // console.log("Allergic Data: " + data)
   return (
     <Box sx={{ width: "100%" }}>
       <Grid className="header">
