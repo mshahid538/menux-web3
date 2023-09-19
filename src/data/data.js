@@ -44,24 +44,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: [
-                    "Celery",
-                    "Mustard",
-                    "Lupin",
-                    "Sesame Seeds",
-                    "Sulphite",
-                  ],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: [
-                    "Celery",
-                    "Mustard",
-                    "Lupin",
-                    "Sesame Seeds",
-                    "Sulphite",
-                  ],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -112,12 +100,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -162,12 +150,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -217,12 +205,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -272,12 +260,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -489,24 +477,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: [
-                    "Celery",
-                    "Mustard",
-                    "Lupin",
-                    "Sesame Seeds",
-                    "Sulphite",
-                  ],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: [
-                    "Celery",
-                    "Mustard",
-                    "Lupin",
-                    "Sesame Seeds",
-                    "Sulphite",
-                  ],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -557,12 +533,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -607,12 +583,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -662,12 +638,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -717,12 +693,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -778,12 +754,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -839,12 +815,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -901,12 +877,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -963,12 +939,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1018,12 +994,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1073,12 +1049,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1128,12 +1104,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1397,12 +1373,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1447,12 +1423,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1502,12 +1478,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1557,12 +1533,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1618,12 +1594,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1679,12 +1655,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1741,12 +1717,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1803,12 +1779,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1858,12 +1834,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1913,12 +1889,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",
@@ -1968,12 +1944,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: ["Celery", "Mustard", "Lupin"],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: ["Lupin", "Sesame Seeds", "Sulphite"],
+                  list: [],
                 },
                 {
                   name: "Free From",

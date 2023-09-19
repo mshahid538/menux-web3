@@ -68,7 +68,7 @@ function Allergies() {
       <Box>
         <Grid className="input" my={3}>
           <Typography variant="body2" fontWeight={"bold"} fontSize={24}>
-            I am allergic to.
+            I am allergic to:
           </Typography>
         </Grid>
         <Box
