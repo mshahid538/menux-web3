@@ -241,9 +241,9 @@ function CategoriesAccordion({ name }: any) {
                               <>
                                 <Grid
                                   display={"flex"}
-                                  // alignItems={"center"}
-                                  // textAlign={"left"}
-                                  gap={0.5}
+                                  alignItems={"center"}
+                                  textAlign={"left"}
+                                  gap={0.6}
                                 >
                                   <Icons item={type?.key} />
                                   <Typography
