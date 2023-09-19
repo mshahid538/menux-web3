@@ -73,7 +73,9 @@ function SelectRestaurant() {
             </Typography>
             <img
               src={data.img}
-              className={data.name === restaurant ? "img  selected" : "img"}
+              className={
+                data.name === restaurant.name ? "img  selected" : "img"
+              }
             />
           </Box>
         ))}
