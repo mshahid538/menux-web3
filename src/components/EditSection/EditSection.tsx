@@ -93,16 +93,29 @@ function EditSection() {
         </Button>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography
-          className="smallLineHeight"
-          variant="subtitle1"
-          fontWeight={"bold"}
-          fontSize={20}
-          textAlign={"left"}
-          lineHeight="1.25 !important"
-        >
-          Allergens: {allergicTo?.join(", ")}
-        </Typography>
+        <div style={{ display: "flex" }}>
+          <Typography
+            className="smallLineHeight"
+            variant="subtitle1"
+            fontWeight={"bold"}
+            fontSize={20}
+            textAlign={"left"}
+            lineHeight="1.25 !important"
+          >
+            Allergens:
+          </Typography>
+
+          <Typography
+            className="smallLineHeight"
+            variant="subtitle1"
+            fontWeight={"bold"}
+            fontSize={20}
+            textAlign={"left"}
+            lineHeight="1.25 !important"
+          >
+            {allergicTo?.join(", ")}
+          </Typography>
+        </div>
 
         {/* Use onClick to trigger the navigation */}
         <Button
