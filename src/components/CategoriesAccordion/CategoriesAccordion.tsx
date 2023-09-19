@@ -14,6 +14,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 
 import { Data } from "../../data/data";
+import { Icons } from "../Icons/Icons";
 
 // const res = Data.restaurants.map((data) => data)
 // console.log("data", res)
@@ -27,6 +28,7 @@ const res = Data.restaurants.map((restaurant) => {
 
 function CategoriesAccordion({ name }: any) {
   const data = useSelector((state: any) => state.category.category);
+  const foodData = useSelector((state: any) => state.restaurant.value.menuFood);
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [category, setCategory] = useState<string>("");
@@ -101,7 +103,7 @@ function CategoriesAccordion({ name }: any) {
       </AccordionSummary>
 
       <Box my={3}>
-        {Results1.map((name, index) => (
+        {foodData?.map((item: any, index: number) => (
           <>
             <Accordion
               key={index}
@@ -142,7 +144,7 @@ function CategoriesAccordion({ name }: any) {
                     className={`select ${
                       expandedIndexChild === index ? "btn active" : "btn"
                     }`}
-                    onClick={() => handleClickChild(index, name.name)}
+                    onClick={() => handleClickChild(index, item.category)}
                   >
                     {/* subcategory (Starter, Creekstones, Main, etc )  */}
                     <Typography
@@ -150,13 +152,14 @@ function CategoriesAccordion({ name }: any) {
                       fontSize={"24px"}
                       fontWeight={"bold"}
                     >
-                      {expandedIndexChild === index ? " - " : " + "} {name.name}
+                      {expandedIndexChild === index ? " - " : " + "}{" "}
+                      {item.category}
                     </Typography>
                   </Button>
                 </Box>
               </AccordionSummary>
               <AccordionDetails>
-                {name?.products?.map((ite, ind) => (
+                {item?.products?.map((ite: any, ind: number) => (
                   <Accordion
                     // defaultExpanded={true}
                     key={ind}
@@ -229,202 +232,48 @@ function CategoriesAccordion({ name }: any) {
                               textAlign={"start"}
                               justifySelf={"start"}
                             >
-                              Filled with a cheesy garlic sorrel butter and
-                              accompained with a tomato and basil sauce. Chilli
-                              compound.
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                          >
-                            <CheckCircleIcon
-                              sx={{
-                                color: "#13BF5B",
-                                backgroundColor: "black",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Typography
-                              fontSize={"24px"}
-                              fontWeight={"bold"}
-                              // color={"#13BF5B"}
-                            >
-                              Vegetarian
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                          >
-                            <CheckCircleIcon
-                              sx={{
-                                color: "#13BF5B",
-                                backgroundColor: "black",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Typography
-                              fontSize={"24px"}
-                              fontWeight={"bold"}
-                              // color={"#13BF5B"}
-                            >
-                              Vegan
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                          >
-                            <CheckCircleIcon
-                              sx={{
-                                color: "#13BF5B",
-                                backgroundColor: "black",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Typography
-                              fontSize={"24px"}
-                              fontWeight={"bold"}
-                              // color={"#13BF5B"}
-                            >
-                              Free From
+                              {ite.description}
                             </Typography>
                           </Grid>
 
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                            ml={1.75}
-                          >
-                            <Typography variant="subtitle1" fontSize={20}>
-                              Fish, Crustaceans, Molluscs, Celery, Mustard,
-                              Lupin, Sesame Seeds, Sulphite,
-                            </Typography>
-                          </Grid>
+                          {ite.types?.map((type: any, ind: number) => {
+                            return (
+                              <>
+                                <Grid
+                                  display={"flex"}
+                                  // alignItems={"center"}
+                                  // textAlign={"left"}
+                                  gap={0.5}
+                                >
+                                  <Icons item={type?.key} />
+                                  <Typography
+                                    fontSize={"24px"}
+                                    fontWeight={"bold"}
+                                    // color={"#13BF5B"}
+                                    textAlign={"left"}
+                                  >
+                                    {type.name}
+                                  </Typography>
+                                </Grid>
 
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                          >
-                            <InfoIcon
-                              sx={{
-                                color: "#13BF5B",
-                                backgroundColor: "black",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Typography
-                              fontSize={"24px"}
-                              fontWeight={"bold"}
-                              // color={"#13BF5B"}
-                            >
-                              Ask To Modify
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                            // ml={2}
-                            pl={3}
-                          >
-                            <Typography variant="subtitle1" fontSize={20}>
-                              Milk, Soya
-                            </Typography>
-                          </Grid>
-
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                          >
-                            <InfoIcon
-                              sx={{
-                                color: "#ED187C",
-                                backgroundColor: "black",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Typography
-                              fontSize={"24px"}
-                              fontWeight={"bold"}
-                              // color={"#13BF5B"}
-                            >
-                              Cross Contamination
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                            // ml={2}
-                            pl={3}
-                          >
-                            <Typography variant="subtitle1" fontSize={20}>
-                              Nuts, Peanuts, Eggs
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                          >
-                            <CancelIcon
-                              sx={{
-                                color: "#ED187C",
-                                backgroundColor: "black",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <Typography
-                              fontSize={"24px"}
-                              fontWeight={"bold"}
-                              // color={"#13BF5B"}
-                            >
-                              Contains
-                            </Typography>
-                          </Grid>
-                          <Grid
-                            display={"flex"}
-                            alignItems={"center"}
-                            gap={0.5}
-                            // ml={2}
-                            pl={3}
-                          >
-                            <Typography variant="subtitle1" fontSize={20}>
-                              Cereals W Gluten
-                            </Typography>
-                          </Grid>
-                        </Box>
-
-                        <Box display={"grid"}>
-                          <Typography
-                            variant="subtitle1"
-                            mt={1}
-                            fontWeight={"bold"}
-                            justifySelf={"start"}
-                            fontSize={24}
-                          >
-                            Not suitable for: Vegetarian
-                          </Typography>
-                        </Box>
-
-                        <Box display={"grid"}>
-                          <Typography
-                            variant="subtitle1"
-                            mt={1}
-                            fontWeight={"bold"}
-                            justifySelf={"start"}
-                            fontSize={24}
-                          >
-                            May contain: Milk
-                          </Typography>
+                                <Grid
+                                  display={"flex"}
+                                  alignItems={"center"}
+                                  gap={0.5}
+                                  ml={1.75}
+                                >
+                                  <Typography
+                                    variant="subtitle1"
+                                    fontSize={20}
+                                    textAlign={"left"}
+                                    marginLeft={"1rem"}
+                                  >
+                                    {type.list.join(", ")}
+                                  </Typography>
+                                </Grid>
+                              </>
+                            );
+                          })}
                         </Box>
                       </Typography>
                     </AccordionDetails>

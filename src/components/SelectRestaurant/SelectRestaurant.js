@@ -47,7 +47,7 @@ function SelectRestaurant() {
             my={2}
             position={"relative"}
             key={index}
-            onClick={() => handleClick(data.name)}
+            onClick={() => handleClick(data)}
           >
             <Typography
               variant="body2"

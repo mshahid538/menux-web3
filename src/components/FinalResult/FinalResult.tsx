@@ -55,12 +55,12 @@ function FinalResult() {
     category: string,
     productName: string
   ) => {
-    const restaurant = restaurantData.restaurants.find(
+    const restaurant = restaurantData?.restaurants?.find(
       (r) => r.name === restaurantName
     ) as {
       id: number;
       name: string;
-      menu: {
+      menuFood: {
         id: number;
         category: string;
         products: {
@@ -69,6 +69,13 @@ function FinalResult() {
           notSuitable: string[];
           mayContain: string[];
           ingredients?: string[];
+        }[];
+      }[];
+      menuDrinks: {
+        name: string;
+        products: {
+          id: number;
+          name: string;
         }[];
       }[];
     };
@@ -84,7 +91,7 @@ function FinalResult() {
       return;
     }
 
-    const menuCategory = restaurant.menu.find(
+    const menuCategory = restaurant.menuFood.find(
       (c) => c.category === category
     ) as {
       id: number;
