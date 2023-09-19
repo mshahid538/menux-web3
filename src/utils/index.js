@@ -47,7 +47,7 @@ export function displayAllergiesForRestaurantCategoryAndProduct(
     return;
   }
 
-  const menuCategory = restaurant.menu.find((c) => c.category === category);
+  const menuCategory = restaurant.menuFood.find((c) => c.category === category);
 
   if (!menuCategory) {
     console.log(

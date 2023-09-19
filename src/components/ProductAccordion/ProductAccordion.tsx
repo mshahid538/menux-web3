@@ -12,6 +12,9 @@ import { setProduct } from "../../app/features/product/productSlice";
 
 function ProductAccordion({ name, callback }: any) {
   const product = useSelector((state: any) => state.product.product);
+  const drinksData = useSelector(
+    (state: any) => state.restaurant.value.menuDrinks
+  );
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [category, setCategory] = useState<string>("");
@@ -92,7 +95,7 @@ function ProductAccordion({ name, callback }: any) {
         </AccordionSummary>
 
         <Box my={3}>
-          {ResultsTwo.map((name, index) => (
+          {drinksData?.map((item: any, index: number) => (
             <>
               <>
                 <Accordion
@@ -134,20 +137,20 @@ function ProductAccordion({ name, callback }: any) {
                         className={`select ${
                           expandedIndexChild === index ? "btn active" : "btn"
                         }`}
-                        onClick={() => handleClickChild(index, name.name)}
+                        onClick={() => handleClickChild(index, item.name)}
                       >
                         <Typography
                           variant="body1"
                           fontSize={"24px"}
                           fontWeight={"bold"}
                         >
-                          + {name.name}
+                          + {item.name}
                         </Typography>
                       </Button>
                     </Box>
                   </AccordionSummary>
                   <AccordionDetails>
-                    {name?.products?.map((ite, ind) => (
+                    {item?.products?.map((ite: any, ind: number) => (
                       <Accordion
                         // defaultExpanded={true}
                         key={ind}
