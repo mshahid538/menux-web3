@@ -112,6 +112,7 @@ function EditSection() {
             fontSize={20}
             textAlign={"left"}
             lineHeight="1.25 !important"
+            marginLeft={"0.3rem"}
           >
             {allergicTo?.join(", ")}
           </Typography>
