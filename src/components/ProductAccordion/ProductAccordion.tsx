@@ -144,7 +144,7 @@ function ProductAccordion({ name, callback }: any) {
                           fontSize={"24px"}
                           fontWeight={"bold"}
                         >
-                          + {item.name}
+                          {expandedIndexChild === index ? "-" : "+"} {item.name}
                         </Typography>
                       </Button>
                     </Box>
@@ -192,7 +192,8 @@ function ProductAccordion({ name, callback }: any) {
                               fontSize={"24px"}
                               fontWeight={"bold"}
                             >
-                              + {ite.name}
+                              {expandedIndexSubchild === ind ? "-" : "+"}{" "}
+                              {ite.name}
                             </Typography>
                           </Button>
                         </AccordionSummary>
