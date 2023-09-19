@@ -1305,24 +1305,12 @@ export const Data = {
                 {
                   name: "Vegetarian",
                   key: "tick",
-                  list: [
-                    "Celery",
-                    "Mustard",
-                    "Lupin",
-                    "Sesame Seeds",
-                    "Sulphite",
-                  ],
+                  list: [],
                 },
                 {
                   name: "Vegan",
                   key: "tick",
-                  list: [
-                    "Celery",
-                    "Mustard",
-                    "Lupin",
-                    "Sesame Seeds",
-                    "Sulphite",
-                  ],
+                  list: [],
                 },
                 {
                   name: "Free From",
