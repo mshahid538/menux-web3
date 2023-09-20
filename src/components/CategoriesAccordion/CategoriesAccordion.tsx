@@ -7,20 +7,14 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./index.css";
 import { Box, Button, Grid, Link } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategories } from "../../app/features/category/categorySlice";
 
 import { Data } from "../../data/data";
 import { Icons } from "../Icons/Icons";
-
-// const res = Data.restaurants.map((data) => data)
-// console.log("data", res)
 
 const res = Data.restaurants.map((restaurant) => {
   // You can perform transformations or select specific properties here
   return restaurant;
 });
-
-// console.log("main", res);
 
 function CategoriesAccordion({ name }: any) {
   const data = useSelector((state: any) => state.category.category);
@@ -28,34 +22,25 @@ function CategoriesAccordion({ name }: any) {
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [category, setCategory] = useState<string>("");
-  const [expandedIndex, setExpandedIndex] = useState(-1); // Initialize state to control expanded Accordion
-  const [expandedIndexChild, setExpandedIndexChild] = useState(-1); // Initialize state to control expanded Accordion
-  const [expandedIndexSubchild, setExpandedIndexSubchild] = useState(-1); // Initialize state to control expanded Accordion
+  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expandedIndexChild, setExpandedIndexChild] = useState(-1);
+  const [expandedIndexSubchild, setExpandedIndexSubchild] = useState(-1);
 
-  const handleClick = (index: number, name: string) => {
-    if (expandedIndex === index) {
-      // If the clicked Accordion is already expanded, close it
-      setExpandedIndex(-1);
-    } else {
-      // Otherwise, expand the clicked Accordion
-      setExpandedIndex(index);
-    }
-  };
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
   const handleClickChild = (index: number, name: string) => {
     if (expandedIndexChild === index) {
-      // If the clicked Accordion is already expanded, close it
       setExpandedIndexChild(-1);
     } else {
-      // Otherwise, expand the clicked Accordion
       setExpandedIndexChild(index);
     }
   };
   const handleClickSubChild = (index: number, name: string) => {
     if (expandedIndexSubchild === index) {
-      // If the clicked Accordion is already expanded, close it
       setExpandedIndexSubchild(-1);
     } else {
-      // Otherwise, expand the clicked Accordion
       setExpandedIndexSubchild(index);
     }
   };
@@ -63,6 +48,8 @@ function CategoriesAccordion({ name }: any) {
   return (
     <Accordion
       // defaultExpanded={true}
+      expanded={expanded === "panel1"}
+      onChange={handleChange("panel1")}
       style={{ backgroundColor: "white", minWidth: "400px" }}
     >
       <AccordionSummary
@@ -94,7 +81,7 @@ function CategoriesAccordion({ name }: any) {
       >
         {/* category (Food )  */}
         <Typography fontWeight={"bold"} fontSize={"24px"}>
-          + {name}
+          {expanded === "panel1" ? "- " : "+ "} {name}
         </Typography>
       </AccordionSummary>
 

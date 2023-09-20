@@ -1,8 +1,6 @@
-import { Box, Grid, Button, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Header from "../Header/Header";
-import { ResultsTwo } from "../../constants/ResultsTwo";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./index.css";
 import Cookies from "../Cookies";
 import CategoriesAccordion from "../CategoriesAccordion";
@@ -39,10 +37,7 @@ type RestaurantData = {
 };
 
 function FinalResult() {
-  const allergicTo = useSelector((state: any) => state.allergic.value);
   const product = useSelector((state: any) => state.product.product);
-  const category = useSelector((state: any) => state.category.category);
-  const requirements = useSelector((state: any) => state.requirements.value);
   const res = useSelector((state: any) => state.restaurant.value);
 
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
@@ -149,23 +144,11 @@ function FinalResult() {
     });
   }
 
-  function handleReduxData() {
-    console.log("Allergic To : " + allergicTo);
-    console.log("Product Selected : " + product);
-    console.log("Category Selected : " + category);
-    console.log("Requirements Selected : " + requirements);
-    console.log("Restaurant Selected : " + res);
-  }
-
   function handleCallback() {
     displayAllergiesForRestaurantCategoryAndProduct(res, "Mains", product);
   }
   return (
-    <Box
-      sx={{ width: "100%", backgroundColor: "white" }}
-      // onClick={() => console.log(requirements)}
-    >
-      {/* <Button onClick={handleReduxData}>Test Collected Data</Button> */}
+    <Box sx={{ width: "100%", backgroundColor: "white" }}>
       <Grid className="header">
         <Header />
       </Grid>
@@ -173,16 +156,6 @@ function FinalResult() {
         <EditSection />
       </Grid>
       <Box my={3}>
-        {/* {allergenInfo && (
-          <div>
-            <h2>Allergen Information</h2>
-            <p>Restaurant: {allergenInfo.restaurantName}</p>
-            <p>Category: {allergenInfo.category}</p>
-            <p>Product: {allergenInfo.productName}</p>
-            <p>Not Suitable for: {allergenInfo.notSuitable.join(", ")}</p>
-            <p>May Contain: {allergenInfo.mayContain.join(", ")}</p>
-          </div>
-        )} */}
         <Box
           display={"grid"}
           gap={2}
@@ -204,136 +177,12 @@ function FinalResult() {
             margin={"0 auto"}
             width={"60%"}
           >
-            {/* <Button
-              className="btn"
-              sx={{
-                background: "#ED187C",
-                color: "white",
-                width: "400px",
-                fontWeight: "bold",
-                border: "2px solid black",
-                textTransform: "capitalize",
-                borderRadius: "10px",
-                height: "10vh",
-                fontSize: 24,
-                display: "flex",
-                textAlign: "start",
-                justifyContent: "start",
-                marginY: "10px",
-                paddingLeft: "20px",
-                "&:hover": {
-                  background: "#ED187C",
-                  fontSize: 24,
-                },
-              }}
-            >
-              - {category}
-            </Button>
-
-            <Button
-              className="btn"
-              sx={{
-                background: "#ED187C",
-                color: "white",
-                width: "400px",
-                fontWeight: "bold",
-                border: "2px solid black",
-                textTransform: "capitalize",
-                borderRadius: "10px",
-                height: "10vh",
-                fontSize: 24,
-                display: "flex",
-                textAlign: "start",
-                justifyContent: "start",
-                marginY: "10px",
-                paddingLeft: "20px",
-                "&:hover": {
-                  background: "#ED187C",
-                  fontSize: 24,
-                },
-              }}
-            >
-              - {product}
-            </Button>
-
-            <Box display={"grid"}>
-              <Typography
-                variant="subtitle1"
-                mt={1}
-                fontWeight={"bold"}
-                justifySelf={"start"}
-                fontSize={24}
-              >
-                Description22:
-              </Typography>
-              <Typography
-                fontSize={24}
-                variant="subtitle1"
-                mt={1}
-                fontWeight={"bold"}
-                display={"grid"}
-                textAlign={"start"}
-                justifySelf={"start"}
-              >
-                Filled with a cheesy garlic sorrel butter and accompained with a
-                tomato and basil sauce. Chilli compound
-              </Typography>
-            </Box>
-
-            <Box display={"grid"}>
-              <Typography
-                variant="subtitle1"
-                mt={1}
-                fontWeight={"bold"}
-                justifySelf={"start"}
-                fontSize={24}
-              >
-                Not suitable for:
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                mt={1}
-                justifySelf={"start"}
-                fontSize={24}
-                fontWeight={"bold"}
-              >
-                {allergenInfo && allergenInfo.notSuitable.join(", ")}
-                {!allergenInfo && <>Vegetarian</>}
-              </Typography>
-            </Box>
-
-            <Box display={"grid"}>
-              <Typography
-                variant="subtitle1"
-                mt={1}
-                fontWeight={"bold"}
-                justifySelf={"start"}
-                fontSize={24}
-              >
-                May contain:
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                mt={1}
-                fontSize={24}
-                justifySelf={"start"}
-                fontWeight={"bold"}
-              >
-                {allergenInfo && allergenInfo.mayContain.join(", ")}
-                {!allergenInfo && <>Milk</>}
-              </Typography>
-            </Box> */}
             <CategoriesAccordion
               name={" Food"}
               title={"Cookie"}
               subtitle={"VEGAN Milk Chocolate"}
             />
-            {/* <ProductAccordion
-              name={"- Pan Fried Chicken Breast"}
-              title={"Mains"}
-              subtitle={"Soup"}
-              callback={handleCallback}
-            /> */}
+
             <ProductAccordion
               name={" Drinks"}
               title={"Mains"}
