@@ -2111,25 +2111,6 @@ export const Data = {
       ],
     },
   ],
-
-  allergies: {
-    nuts: "Nuts",
-    peanut: "Penaut",
-    fish: "Fish",
-    eggs: "eggs",
-    crustaceans: "Crustaceans",
-    molluscs: "Molluscs",
-    milk: "Milk",
-    soya: "Soya",
-    celery: "Celery",
-    mustard: "Mustard",
-    lupin: "Lupin",
-    "sesame-seeds": "Sesame Seeds",
-    sulphite: "Sulphite",
-    "cereals-w-gluten": "Cereals w Gluten",
-    dairy: "Dairy",
-    gluten: "Gluten",
-  },
 };
 
 // allergy data

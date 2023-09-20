@@ -6,12 +6,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./index.css";
 import { Box, Button, Grid, Link } from "@mui/material";
-import InfoIcon from "@mui/icons-material/Info";
-import { Results1 } from "../../constants/Results1";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../app/features/category/categorySlice";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CancelIcon from "@mui/icons-material/Cancel";
 
 import { Data } from "../../data/data";
 import { Icons } from "../Icons/Icons";

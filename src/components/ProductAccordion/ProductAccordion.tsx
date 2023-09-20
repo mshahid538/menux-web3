@@ -5,8 +5,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Button, Grid, Link } from "@mui/material";
-import { Results1 } from "../../constants/Results1";
-import { ResultsTwo } from "../../constants/ResultsTwo";
 import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../../app/features/product/productSlice";
 
