@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import { DietaryReq } from "../../data/data.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setRequirements } from "../../app/features/requirements/requirementsSlice";
@@ -118,37 +118,6 @@ function DietaryRequirements() {
               Next
             </Button>
           </Link>
-          {/* <Link
-            to={"/allergic"}
-            style={{
-              color: "#FBD2E5",
-              textDecoration: "none",
-              background: "#ED187C",
-              width: "400px",
-              height: "10vh",
-              textTransform: "none",
-              borderRadius: "12px",
-              marginTop: "40px",
-              marginBottom: "20px",
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <Button
-              sx={{
-                color: "#FBD2E5",
-                textTransform: "none",
-                borderRadius: "12px",
-                "&:hover": {
-                  background: "#ED187C",
-                  fontSize: "14px",
-                },
-              }}
-            >
-              Next
-            </Button>
-          </Link> */}
         </Box>
       </Box>
     </Box>

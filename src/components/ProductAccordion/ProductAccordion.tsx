@@ -4,7 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Button, Grid, Link } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../../app/features/product/productSlice";
 
@@ -16,7 +16,8 @@ function ProductAccordion({ name, callback }: any) {
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [category, setCategory] = useState<string>("");
-  const [expandedIndexChild, setExpandedIndexChild] = useState(-1); // Initialize state to control expanded Accordion
+  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expandedIndexChild, setExpandedIndexChild] = useState(-1);
   const [expandedIndexSubchild, setExpandedIndexSubchild] = useState(-1); // Initialize state to control expanded Accordion
 
   function handleClick(index: number, name: string) {
@@ -32,6 +33,12 @@ function ProductAccordion({ name, callback }: any) {
     console.log(product);
     callback();
   }
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
   const handleClickChild = (index: number, name: string) => {
     if (expandedIndexChild === index) {
       // If the clicked Accordion is already expanded, close it
@@ -43,10 +50,8 @@ function ProductAccordion({ name, callback }: any) {
   };
   const handleClickSubChild = (index: number, name: string) => {
     if (expandedIndexSubchild === index) {
-      // If the clicked Accordion is already expanded, close it
       setExpandedIndexSubchild(-1);
     } else {
-      // Otherwise, expand the clicked Accordion
       setExpandedIndexSubchild(index);
     }
   };
@@ -56,7 +61,8 @@ function ProductAccordion({ name, callback }: any) {
   return (
     <>
       <Accordion
-        // defaultExpanded={true}
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel1")}
         style={{ backgroundColor: "white", minWidth: "400px" }}
       >
         <AccordionSummary
@@ -88,7 +94,8 @@ function ProductAccordion({ name, callback }: any) {
         >
           {/* category (Drink)  */}
           <Typography fontWeight={"bold"} fontSize={"24px"}>
-            + {name}
+            {expanded === "panel1" ? "- " : "+ "} {name}
+            {name}
           </Typography>
         </AccordionSummary>
 

@@ -1,15 +1,12 @@
-import base from "@emotion/styled/types/base";
-import { Box, Button, Divider, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Header from "../Header/Header";
 import "./index.css";
 import { AllergicList } from "../../data/data.js";
 import { useState } from "react";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DietaryType } from "../../constants/DietaryTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { allergicBy } from "../../app/features/allergicTo/counterSlice";
-import { allergic } from "../../app/features/allergic/allergicSlice";
 function Allergies() {
   const count = useSelector((state: any) => state.allergic.value);
 

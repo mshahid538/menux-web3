@@ -1,7 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import "./index.css";
 import ListBox from "../ListBox";
-import ReqBox from "../ReqBox";
 import SwitchBox from "../SwitchBox";
 
 function Cookies() {
@@ -11,7 +10,6 @@ function Cookies() {
         <Box sx={{ marginTop: "-22px" }}>
           <ListBox />
         </Box>
-        <Box>{/* <ReqBox /> */}</Box>
         <Box display={"flex"} justifyContent={"center"}>
           <SwitchBox />
         </Box>

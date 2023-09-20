@@ -1,4 +1,3 @@
-import React from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import InfoIcon from "@mui/icons-material/Info";
