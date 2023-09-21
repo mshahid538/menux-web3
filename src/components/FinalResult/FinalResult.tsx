@@ -166,8 +166,8 @@ function FinalResult() {
           <Cookies />
         </Box>
       </Box>
-      <Grid container>
-        <Grid item my={3} mb={9}>
+      <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+        <Grid item my={3} mb={20}>
           <Box
             display={"grid"}
             gap={2}
@@ -175,7 +175,7 @@ function FinalResult() {
             textAlign={"center"}
             mx={3}
             margin={"0 auto"}
-            width={"60%"}
+            width={"93%"}
           >
             <CategoriesAccordion
               name={" Food"}

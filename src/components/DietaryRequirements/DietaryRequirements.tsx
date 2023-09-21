@@ -40,7 +40,7 @@ function DietaryRequirements() {
       <Grid className="header">
         <Header />
       </Grid>
-      <Box>
+      <Box className="requirements">
         <Grid className="input" my={3}>
           <Typography variant="body2" fontWeight={"bold"} fontSize={24}>
             I am:
@@ -53,7 +53,7 @@ function DietaryRequirements() {
               sx={{
                 background: "#F6F7F9",
                 color: "black",
-                width: "400px",
+                width: "100%",
                 fontWeight: "bold",
                 border: "3px solid black",
                 textTransform: "capitalize",
@@ -98,7 +98,7 @@ function DietaryRequirements() {
               sx={{
                 background: "#ED187C",
                 color: "white",
-                width: "400px",
+                width: "100%",
                 fontWeight: "bold",
                 textTransform: "capitalize",
                 borderRadius: "15px",

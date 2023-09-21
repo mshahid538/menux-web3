@@ -16,7 +16,7 @@
   src: url("./fonts/louis-george-cafe.bold.ttf") format("truetype");
   /* Add more font formats if necessary */
   font-weight: bold;
-  font-style:normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -54,9 +54,15 @@
   border-bottom: 1px solid #c5aeae;
 }
 @media only screen and (min-width: 100px) and (max-width: 768px) {
-  .btn {
+  /* .btn {
     width: 200px !important;
-  }
+  } */
+}
+
+@media screen and (max-width: 425px) {
+  /* .viewport {
+    width: 400px;
+  } */
 }
 .App-logo {
   height: 40vmin;
