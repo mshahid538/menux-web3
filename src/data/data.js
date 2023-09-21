@@ -2160,12 +2160,12 @@ export const AllergicList = [
     icon: lupin,
   },
   {
-    name: "Sesame Seeds",
-    icon: seeds,
-  },
-  {
     name: "Sulphite",
     icon: sulphate,
+  },
+  {
+    name: "Sesame Seeds",
+    icon: seeds,
   },
   {
     name: "Cereals w Gluten",
