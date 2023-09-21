@@ -67,6 +67,7 @@ const IOSSwitch = styled((props: SwitchProps) => (
 export default function Disclaimer() {
   return (
     <Card
+      className="disclaimer"
       sx={{
         borderRadius: "16px",
         margin: 3,
@@ -74,36 +75,89 @@ export default function Disclaimer() {
         justifyContent: "center",
       }}
     >
-      <CardContent
-      >
-        <Typography  fontSize={"36px"} variant="h3" fontWeight={"bold"}  display={"flex"} justifyContent={"start"} textAlign={"start"}>
+      <CardContent>
+        <Typography
+          fontSize={"36px"}
+          variant="h3"
+          fontWeight={"bold"}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+        >
           Safety Disclaimer
         </Typography>
-        <Typography variant="body1" mt={2} display={"flex"} justifyContent={"start"} textAlign={"start"} fontSize={"24px"}>
+        <Typography
+          variant="body1"
+          mt={2}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+          fontSize={"24px"}
+        >
           The information entered through the MenuX app is intended for general
           guidance and informational purposes only.
         </Typography>
-        <Typography variant="body1" mt={2} display={"flex"} justifyContent={"start"} textAlign={"start"} fontSize={"24px"}>
+        <Typography
+          variant="body1"
+          mt={2}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+          fontSize={"24px"}
+        >
           While we strive to offer accurate and up-to-date details about menu
           items, it's important to note individual dietary preferences,
           restrictions, and allergy concerns vary.
         </Typography>
-        <Typography variant="body1" mt={2} display={"flex"} justifyContent={"start"} textAlign={"start"} fontSize={"24px"}>
+        <Typography
+          variant="body1"
+          mt={2}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+          fontSize={"24px"}
+        >
           We strongly encourage that you communicate any specific dietary or
           allergy requirements to the restaurant staff, ensuring a safe and
           enjoyable dining experience.
         </Typography>
-        <Typography variant="body1" my={2} display={"flex"} justifyContent={"start"} textAlign={"start"} fontSize={"24px"}>
+        <Typography
+          variant="body1"
+          my={2}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+          fontSize={"24px"}
+        >
           Your well-being is our priority.
         </Typography>
-        <Typography variant="body1" fontWeight={"bold"} display={"flex"} justifyContent={"start"} textAlign={"start"} fontSize={"24px"}>
+        <Typography
+          variant="body1"
+          fontWeight={"bold"}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+          fontSize={"24px"}
+        >
           Happy dining
         </Typography>
-        <Typography variant="body1" fontWeight={"bold"} display={"flex"} justifyContent={"start"} textAlign={"start"} fontSize={"24px"}>
+        <Typography
+          variant="body1"
+          fontWeight={"bold"}
+          display={"flex"}
+          justifyContent={"start"}
+          textAlign={"start"}
+          fontSize={"24px"}
+        >
           The MenuX Team
         </Typography>
         <Box display={"flex"} justifyContent={"center"}>
-        <Link  to={"/restaurant"} style={{ color: "#FBD2E5", textDecoration: "none" ,   background: "#ED187C",
+          <Link
+            to={"/restaurant"}
+            style={{
+              color: "#FBD2E5",
+              textDecoration: "none",
+              background: "#ED187C",
               width: "350px",
               height: "67px",
               textTransform: "none",
@@ -112,24 +166,24 @@ export default function Disclaimer() {
               marginBottom: "20px",
               alignItems: "center",
               display: "flex",
-              justifyContent: "center"
-             }}>
-        <Button
-            sx={{
-              color: "#FBD2E5",
-              "&:hover": {
-                background: "#ED187C",
-              },
-              textTransform: "capitalize",
-              textDecoration: "none",
-              fontSize: "24px"
+              justifyContent: "center",
             }}
           >
-            I accept
-          </Button>
+            <Button
+              sx={{
+                color: "#FBD2E5",
+                "&:hover": {
+                  background: "#ED187C",
+                },
+                textTransform: "capitalize",
+                textDecoration: "none",
+                fontSize: "24px",
+              }}
+            >
+              I accept
+            </Button>
           </Link>
         </Box>
-       
       </CardContent>
     </Card>
   );

@@ -69,8 +69,8 @@ function Allergies() {
           </Typography>
         </Grid>
         <Box
-          mx={12}
-          mr={2}
+          mx={5}
+          // mr={2}
           sx={{
             display: "flex",
             textAlign: "center",
@@ -84,9 +84,9 @@ function Allergies() {
               <Grid
                 my={1}
                 item
-                lg={5}
+                lg={4}
                 md={4}
-                sm={6}
+                sm={4}
                 key={index}
                 sx={{ display: "flex", flexDirection: "column" }}
               >

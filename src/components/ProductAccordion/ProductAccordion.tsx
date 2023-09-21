@@ -63,7 +63,7 @@ function ProductAccordion({ name, callback }: any) {
       <Accordion
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
-        style={{ backgroundColor: "white", minWidth: "400px" }}
+        style={{ backgroundColor: "white", minWidth: "100%" }}
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
@@ -74,7 +74,7 @@ function ProductAccordion({ name, callback }: any) {
           sx={{
             background: "#ED187C",
             color: "white",
-            minWidth: "400px",
+            minWidth: "100%",
             fontWeight: "bold",
             border: "2px solid black",
             textTransform: "capitalize",
@@ -106,7 +106,7 @@ function ProductAccordion({ name, callback }: any) {
                 <Accordion
                   key={index}
                   expanded={expandedIndexChild === index} // Control expanded state
-                  style={{ backgroundColor: "white", minWidth: "380px" }}
+                  style={{ backgroundColor: "white", minWidth: "100%" }}
                 >
                   <AccordionSummary>
                     <Box
@@ -115,13 +115,14 @@ function ProductAccordion({ name, callback }: any) {
                       gap={2}
                       justifyContent={"center"}
                       textAlign={"center"}
-                      mx={3}
+                      mx={0}
+                      width={"100%"}
                     >
                       <Button
                         sx={{
                           background: "#F6F7F9",
                           color: "black",
-                          width: "370px",
+                          width: "100%",
                           fontWeight: "bold",
                           border: "2px solid black",
                           textTransform: "capitalize",
@@ -160,14 +161,14 @@ function ProductAccordion({ name, callback }: any) {
                         // defaultExpanded={true}
                         key={ind}
                         expanded={expandedIndexSubchild === ind}
-                        style={{ backgroundColor: "white", minWidth: "380px" }}
+                        style={{ backgroundColor: "white", minWidth: "100%" }}
                       >
                         <AccordionSummary>
                           <Button
                             sx={{
                               background: "#F6F7F9",
                               color: "black",
-                              width: "350px",
+                              width: "100%",
                               fontWeight: "bold",
                               border: "2px solid black",
                               textTransform: "capitalize",
