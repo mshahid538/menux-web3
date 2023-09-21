@@ -95,7 +95,6 @@ function ProductAccordion({ name, callback }: any) {
           {/* category (Drink)  */}
           <Typography fontWeight={"bold"} fontSize={"24px"}>
             {expanded === "panel1" ? "- " : "+ "} {name}
-            {name}
           </Typography>
         </AccordionSummary>
 
