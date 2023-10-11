@@ -4,6 +4,7 @@ import categorySlice from "../features/category/categorySlice";
 import productSlice from "../features/product/productSlice";
 import requirementsSlice from "../features/requirements/requirementsSlice";
 import restaurantSlice from "../features/restaurant/restaurantSlice";
+import showSuitableSlice from "../features/showSuitable/showSuitableSlice";
 
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
@@ -21,6 +22,7 @@ const reducer = combineReducers({
   product: productSlice,
   requirements: requirementsSlice,
   restaurant: restaurantSlice,
+  suitable: showSuitableSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

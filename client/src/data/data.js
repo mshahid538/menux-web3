@@ -34,8 +34,9 @@ export const Data = {
           products: [
             {
               id: 1,
-              name: "Pan Fried Chicken Breast",
+              name: "Pan Fried Chicken Breast Milk",
               notSuitable: ["Vegetarian", "Vegan"],
+              allergens: ["Milk"],
               mayContain: ["Nuts", "Milk"],
               ingredients: [""],
               description:
@@ -92,7 +93,8 @@ export const Data = {
             },
             {
               id: 2,
-              name: "Beef Ribs",
+              name: "Beef Ribs Milk&Egg",
+              allergens: ["Milk", "egg"],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
               description: "Filled with a tomato and basil sauce.",
@@ -141,7 +143,8 @@ export const Data = {
             },
             {
               id: 3,
-              name: "Backed Canon Lamb",
+              name: "Backed Canon Lamb Nuts",
+              allergens: ["Nuts"],
               notSuitable: ["Vegetarian"],
               mayContain: ["Milk"],
               description:
@@ -197,7 +200,8 @@ export const Data = {
             },
             {
               id: 4,
-              name: "Truffle Ravioli",
+              name: "Truffle Ravioli Peanuts",
+              allergens: ["Peanuts"],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
               description: "Filled with a butter and accompained.",
@@ -252,7 +256,8 @@ export const Data = {
             },
             {
               id: 5,
-              name: "Steamed Salmon",
+              name: "Steamed Salmon Fish",
+              allergens: ["Fish"],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
               description: "Filled with a cheesy garlic sorrel.",
@@ -314,6 +319,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
             },
@@ -326,6 +332,7 @@ export const Data = {
             {
               id: 2,
               name: "Beef Ribs",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
             },
@@ -338,6 +345,7 @@ export const Data = {
             {
               id: 3,
               name: "Backed Canon Lamb",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Milk"],
             },
@@ -350,6 +358,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
             },
@@ -362,6 +371,7 @@ export const Data = {
             {
               id: 5,
               name: "Steamed Salmon",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
             },
@@ -374,6 +384,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
             },
@@ -386,6 +397,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
             },
@@ -468,7 +480,9 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
+              allergens: ["Nuts", "Peanuts"],
               mayContain: ["Nuts", "Milk"],
               ingredients: [""],
               description:
@@ -526,6 +540,7 @@ export const Data = {
             {
               id: 2,
               name: "Beef Ribs",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
               description: "Filled with a tomato and basil sauce.",
@@ -575,6 +590,7 @@ export const Data = {
             {
               id: 3,
               name: "Backed Canon Lamb",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Milk"],
               description:
@@ -631,6 +647,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
               description: "Filled with a butter and accompained.",
@@ -686,6 +703,7 @@ export const Data = {
             {
               id: 5,
               name: "Steamed Salmon",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
               description: "Filled with a cheesy garlic sorrel.",
@@ -747,6 +765,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
               description: "Filled with a cheesy garlic sorrel.",
@@ -808,6 +827,7 @@ export const Data = {
             {
               id: 2,
               name: "Beef Ribs",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
               description: "Filled with a butter and accompained.",
@@ -869,6 +889,7 @@ export const Data = {
             {
               id: 3,
               name: "Backed Canon Lamb",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Milk"],
               description:
@@ -931,6 +952,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
 
@@ -987,6 +1009,7 @@ export const Data = {
             {
               id: 5,
               name: "Steamed Salmon",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
               description: "Filled with a tomato and basil sauce.",
@@ -1042,6 +1065,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
               description: "Filled with a tomato and basil sauce.",
@@ -1097,6 +1121,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
               description: "Filled with a tomato and basil sauce.",
@@ -1296,6 +1321,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
               ingredients: [""],
@@ -1354,6 +1380,7 @@ export const Data = {
             {
               id: 2,
               name: "Beef Ribs",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
               description: "Filled with a tomato and basil sauce.",
@@ -1403,6 +1430,7 @@ export const Data = {
             {
               id: 3,
               name: "Backed Canon Lamb",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Milk"],
               description:
@@ -1459,6 +1487,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
               description: "Filled with a butter and accompained.",
@@ -1514,6 +1543,7 @@ export const Data = {
             {
               id: 5,
               name: "Steamed Salmon",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
               description: "Filled with a cheesy garlic sorrel.",
@@ -1575,6 +1605,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
               description: "Filled with a cheesy garlic sorrel.",
@@ -1636,6 +1667,7 @@ export const Data = {
             {
               id: 2,
               name: "Beef Ribs",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
               description: "Filled with a butter and accompained.",
@@ -1697,6 +1729,7 @@ export const Data = {
             {
               id: 3,
               name: "Backed Canon Lamb",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Milk"],
               description:
@@ -1759,6 +1792,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
 
@@ -1815,6 +1849,7 @@ export const Data = {
             {
               id: 5,
               name: "Steamed Salmon",
+              allergens: [""],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
               description: "Filled with a tomato and basil sauce.",
@@ -1870,6 +1905,7 @@ export const Data = {
             {
               id: 4,
               name: "Truffle Ravioli",
+              allergens: [""],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
               description: "Filled with a tomato and basil sauce.",
@@ -1925,6 +1961,7 @@ export const Data = {
             {
               id: 1,
               name: "Pan Fried Chicken Breast",
+              allergens: [""],
               notSuitable: ["Vegetarian", "Vegan"],
               mayContain: ["Nuts", "Milk"],
               description: "Filled with a tomato and basil sauce.",

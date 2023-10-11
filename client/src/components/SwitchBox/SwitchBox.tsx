@@ -6,6 +6,10 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { FormControlLabel, Switch, SwitchProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useDispatch, useSelector } from "react-redux";
+import showSuitableSlice, {
+  setShowSuitable,
+} from "../../app/features/showSuitable/showSuitableSlice";
 
 const bull = (
   <Box
@@ -66,6 +70,19 @@ const IOSSwitch = styled((props: SwitchProps) => (
   },
 }));
 export default function SwitchBox() {
+  const suitableValue = useSelector((state: any) => state.suitable.value);
+  const dispatch = useDispatch();
+
+  const [checkboxValue, setCheckboxValue] = React.useState(
+    suitableValue ? suitableValue : false
+  );
+
+  const handleSwitchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = event.target.checked;
+
+    setCheckboxValue(isChecked);
+    dispatch(setShowSuitable(isChecked));
+  };
   return (
     <Card
       sx={{
@@ -73,15 +90,25 @@ export default function SwitchBox() {
         marginTop: 3,
         display: "flex",
         justifyContent: "space-between",
+        width: "100%",
       }}
     >
       <CardContent sx={{ marginBottom: "-16px" }}>
-        <Typography variant="body2" fontSize={14}>Show Unsuitable</Typography>
+        <Typography variant="body2" fontSize={14}>
+          Show Unsuitable
+        </Typography>
       </CardContent>
       <CardActions sx={{ marginLeft: 1 }}>
         <Box display={"flex"} gap={2}>
           <FormControlLabel
-            control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+            control={
+              <IOSSwitch
+                sx={{ m: 1 }}
+                defaultChecked
+                checked={checkboxValue}
+                onChange={handleSwitchChange}
+              />
+            }
             label=" "
           />
         </Box>

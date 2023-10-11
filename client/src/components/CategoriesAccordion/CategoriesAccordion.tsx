@@ -19,6 +19,8 @@ const res = Data.restaurants.map((restaurant) => {
 function CategoriesAccordion({ name }: any) {
   const data = useSelector((state: any) => state.category.category);
   const foodData = useSelector((state: any) => state.restaurant.value.menuFood);
+  const allergenData = useSelector((state: any) => state.allergic.value);
+  const suitableValue = useSelector((state: any) => state.suitable.value);
   const dispatch = useDispatch();
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [category, setCategory] = useState<string>("");
@@ -143,126 +145,262 @@ function CategoriesAccordion({ name }: any) {
                 </Box>
               </AccordionSummary>
               <AccordionDetails>
-                {item?.products?.map((ite: any, ind: number) => (
-                  <Accordion
-                    // defaultExpanded={true}
-                    key={ind}
-                    expanded={expandedIndexSubchild === ind}
-                    style={{ backgroundColor: "white", minWidth: "100%" }}
-                  >
-                    <AccordionSummary>
-                      <Button
-                        sx={{
-                          background: "#F6F7F9",
-                          color: "black",
-                          width: "100%",
-                          fontWeight: "bold",
-                          border: "2px solid black",
-                          textTransform: "capitalize",
-                          borderRadius: "10px",
-                          height: "10vh",
-                          fontSize: 24,
-                          display: "flex",
-                          textAlign: "start",
-                          justifyContent: "start",
-                          marginY: "10px",
-                          paddingLeft: "20px",
-                          "&:hover": {
-                            background: "#66BC48",
-                            fontSize: 24,
-                          },
-                        }}
+                {item?.products?.map((ite: any, ind: number) => {
+                  if (suitableValue) {
+                    return (
+                      <Accordion
+                        // defaultExpanded={true}
                         key={ind}
-                        className={`select ${
-                          expandedIndexSubchild === ind ? "btn active" : "btn"
-                        }`}
-                        onClick={() => handleClickSubChild(ind, name.name)}
+                        expanded={expandedIndexSubchild === ind}
+                        style={{ backgroundColor: "white", minWidth: "100%" }}
                       >
-                        {/* Product (chiken breast, beef ribs, dynamite prawns, etc )  */}
-                        <Typography
-                          variant="body1"
-                          fontSize={"24px"}
-                          fontWeight={"bold"}
-                        >
-                          {expandedIndexSubchild === ind ? " - " : " + "}
-                          {ite.name}
-                        </Typography>
-                      </Button>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography
-                        variant="body1"
-                        fontSize={"24px"}
-                        fontWeight={"bold"}
-                      >
-                        <Box display={"grid"}>
-                          <Grid>
+                        <AccordionSummary>
+                          <Button
+                            sx={{
+                              background: "#F6F7F9",
+                              color: "black",
+                              width: "100%",
+                              fontWeight: "bold",
+                              border: "2px solid black",
+                              textTransform: "capitalize",
+                              borderRadius: "10px",
+                              height: "10vh",
+                              fontSize: 24,
+                              display: "flex",
+                              textAlign: "start",
+                              justifyContent: "start",
+                              marginY: "10px",
+                              paddingLeft: "20px",
+                              "&:hover": {
+                                background: "#66BC48",
+                                fontSize: 24,
+                              },
+                            }}
+                            key={ind}
+                            className={`select ${
+                              expandedIndexSubchild === ind
+                                ? "btn active"
+                                : "btn"
+                            }`}
+                            onClick={() => handleClickSubChild(ind, name.name)}
+                          >
+                            {/* Product (chiken breast, beef ribs, dynamite prawns, etc )  */}
                             <Typography
-                              variant="subtitle1"
-                              mt={1}
+                              variant="body1"
+                              fontSize={"24px"}
                               fontWeight={"bold"}
-                              justifySelf={"start"}
-                              textAlign={"left"}
-                              fontSize={24}
                             >
-                              Description:
+                              {expandedIndexSubchild === ind ? " - " : " + "}
+                              {ite.name}
                             </Typography>
-                            <Typography
-                              fontSize={24}
-                              variant="subtitle1"
-                              mt={1}
-                              fontWeight={"bold"}
-                              display={"grid"}
-                              textAlign={"start"}
-                              justifySelf={"start"}
-                            >
-                              {ite.description}
-                            </Typography>
-                          </Grid>
-
-                          {ite.types?.map((type: any, ind: number) => {
-                            return (
-                              <>
-                                <Grid
-                                  display={"flex"}
-                                  alignItems={"center"}
+                          </Button>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          <Typography
+                            variant="body1"
+                            fontSize={"24px"}
+                            fontWeight={"bold"}
+                          >
+                            <Box display={"grid"}>
+                              <Grid>
+                                <Typography
+                                  variant="subtitle1"
+                                  mt={1}
+                                  fontWeight={"bold"}
+                                  justifySelf={"start"}
                                   textAlign={"left"}
-                                  gap={0.6}
+                                  fontSize={24}
                                 >
-                                  <Icons item={type?.key} />
-                                  <Typography
-                                    fontSize={"24px"}
-                                    fontWeight={"bold"}
-                                    // color={"#13BF5B"}
-                                    textAlign={"left"}
-                                  >
-                                    {type.name}
-                                  </Typography>
-                                </Grid>
+                                  Description:
+                                </Typography>
+                                <Typography
+                                  fontSize={24}
+                                  variant="subtitle1"
+                                  mt={1}
+                                  fontWeight={"bold"}
+                                  display={"grid"}
+                                  textAlign={"start"}
+                                  justifySelf={"start"}
+                                >
+                                  {ite.description}
+                                </Typography>
+                              </Grid>
 
-                                <Grid
-                                  display={"flex"}
-                                  alignItems={"center"}
-                                  gap={0.5}
-                                  ml={1.75}
-                                >
+                              {ite.types?.map((type: any, ind: number) => {
+                                return (
+                                  <>
+                                    <Grid
+                                      display={"flex"}
+                                      alignItems={"center"}
+                                      textAlign={"left"}
+                                      gap={0.6}
+                                    >
+                                      <Icons item={type?.key} />
+                                      <Typography
+                                        fontSize={"24px"}
+                                        fontWeight={"bold"}
+                                        // color={"#13BF5B"}
+                                        textAlign={"left"}
+                                      >
+                                        {type.name}
+                                      </Typography>
+                                    </Grid>
+
+                                    <Grid
+                                      display={"flex"}
+                                      alignItems={"center"}
+                                      gap={0.5}
+                                      ml={1.75}
+                                    >
+                                      <Typography
+                                        variant="subtitle1"
+                                        fontSize={20}
+                                        textAlign={"left"}
+                                        marginLeft={"1rem"}
+                                      >
+                                        {type.list.join(", ")}
+                                      </Typography>
+                                    </Grid>
+                                  </>
+                                );
+                              })}
+                            </Box>
+                          </Typography>
+                        </AccordionDetails>
+                      </Accordion>
+                    );
+                  } else {
+                    let included = allergenData.some((item: any) =>
+                      ite.name.includes(item)
+                    );
+                    if (!included) {
+                      return (
+                        <Accordion
+                          // defaultExpanded={true}
+                          key={ind}
+                          expanded={expandedIndexSubchild === ind}
+                          style={{ backgroundColor: "white", minWidth: "100%" }}
+                        >
+                          <AccordionSummary>
+                            <Button
+                              sx={{
+                                background: "#F6F7F9",
+                                color: "black",
+                                width: "100%",
+                                fontWeight: "bold",
+                                border: "2px solid black",
+                                textTransform: "capitalize",
+                                borderRadius: "10px",
+                                height: "10vh",
+                                fontSize: 24,
+                                display: "flex",
+                                textAlign: "start",
+                                justifyContent: "start",
+                                marginY: "10px",
+                                paddingLeft: "20px",
+                                "&:hover": {
+                                  background: "#66BC48",
+                                  fontSize: 24,
+                                },
+                              }}
+                              key={ind}
+                              className={`select ${
+                                expandedIndexSubchild === ind
+                                  ? "btn active"
+                                  : "btn"
+                              }`}
+                              onClick={() =>
+                                handleClickSubChild(ind, name.name)
+                              }
+                            >
+                              {/* Product (chiken breast, beef ribs, dynamite prawns, etc )  */}
+                              <Typography
+                                variant="body1"
+                                fontSize={"24px"}
+                                fontWeight={"bold"}
+                              >
+                                {expandedIndexSubchild === ind ? " - " : " + "}
+                                {ite.name}
+                              </Typography>
+                            </Button>
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            <Typography
+                              variant="body1"
+                              fontSize={"24px"}
+                              fontWeight={"bold"}
+                            >
+                              <Box display={"grid"}>
+                                <Grid>
                                   <Typography
                                     variant="subtitle1"
-                                    fontSize={20}
+                                    mt={1}
+                                    fontWeight={"bold"}
+                                    justifySelf={"start"}
                                     textAlign={"left"}
-                                    marginLeft={"1rem"}
+                                    fontSize={24}
                                   >
-                                    {type.list.join(", ")}
+                                    Description:
+                                  </Typography>
+                                  <Typography
+                                    fontSize={24}
+                                    variant="subtitle1"
+                                    mt={1}
+                                    fontWeight={"bold"}
+                                    display={"grid"}
+                                    textAlign={"start"}
+                                    justifySelf={"start"}
+                                  >
+                                    {ite.description}
                                   </Typography>
                                 </Grid>
-                              </>
-                            );
-                          })}
-                        </Box>
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                ))}
+
+                                {ite.types?.map((type: any, ind: number) => {
+                                  return (
+                                    <>
+                                      <Grid
+                                        display={"flex"}
+                                        alignItems={"center"}
+                                        textAlign={"left"}
+                                        gap={0.6}
+                                      >
+                                        <Icons item={type?.key} />
+                                        <Typography
+                                          fontSize={"24px"}
+                                          fontWeight={"bold"}
+                                          // color={"#13BF5B"}
+                                          textAlign={"left"}
+                                        >
+                                          {type.name}
+                                        </Typography>
+                                      </Grid>
+
+                                      <Grid
+                                        display={"flex"}
+                                        alignItems={"center"}
+                                        gap={0.5}
+                                        ml={1.75}
+                                      >
+                                        <Typography
+                                          variant="subtitle1"
+                                          fontSize={20}
+                                          textAlign={"left"}
+                                          marginLeft={"1rem"}
+                                        >
+                                          {type.list.join(", ")}
+                                        </Typography>
+                                      </Grid>
+                                    </>
+                                  );
+                                })}
+                              </Box>
+                            </Typography>
+                          </AccordionDetails>
+                        </Accordion>
+                      );
+                    }
+                  }
+                })}
               </AccordionDetails>
             </Accordion>
           </>
