@@ -34,7 +34,7 @@ export const Data = {
           products: [
             {
               id: 1,
-              name: "Pan Fried Chicken Breast Milk",
+              name: "Pan Fried Chicken Milk",
               notSuitable: ["Vegetarian", "Vegan"],
               allergens: ["Milk"],
               mayContain: ["Nuts", "Milk"],
@@ -93,8 +93,8 @@ export const Data = {
             },
             {
               id: 2,
-              name: "Beef Ribs Milk&Egg",
-              allergens: ["Milk", "egg"],
+              name: "Beef Ribs Fish",
+              allergens: ["Fish"],
               notSuitable: ["Vegan"],
               mayContain: ["Nuts"],
               description: "Filled with a tomato and basil sauce.",
@@ -200,8 +200,8 @@ export const Data = {
             },
             {
               id: 4,
-              name: "Truffle Ravioli Peanuts",
-              allergens: ["Peanuts"],
+              name: "Truffle Ravioli Soya",
+              allergens: ["Soya"],
               notSuitable: ["Vegan"],
               mayContain: ["Milk"],
               description: "Filled with a butter and accompained.",
@@ -256,8 +256,8 @@ export const Data = {
             },
             {
               id: 5,
-              name: "Steamed Salmon Fish",
-              allergens: ["Fish"],
+              name: "Steamed Salmon Eggs",
+              allergens: ["Eggs"],
               notSuitable: ["Vegetarian"],
               mayContain: ["Nuts"],
               description: "Filled with a cheesy garlic sorrel.",

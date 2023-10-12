@@ -73,9 +73,13 @@ export default function SwitchBox() {
   const suitableValue = useSelector((state: any) => state.suitable.value);
   const dispatch = useDispatch();
 
-  const [checkboxValue, setCheckboxValue] = React.useState(
-    suitableValue ? suitableValue : false
-  );
+  const [checkboxValue, setCheckboxValue] = React.useState(false);
+
+  React.useEffect(() => {
+    if (suitableValue) {
+      dispatch(setShowSuitable(false));
+    }
+  }, []);
 
   const handleSwitchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
@@ -104,7 +108,7 @@ export default function SwitchBox() {
             control={
               <IOSSwitch
                 sx={{ m: 1 }}
-                defaultChecked
+                // defaultChecked
                 checked={checkboxValue}
                 onChange={handleSwitchChange}
               />

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: true, // Initial value
+  value: false, // Initial value
 };
 
 export const showSuitableSlice = createSlice({
