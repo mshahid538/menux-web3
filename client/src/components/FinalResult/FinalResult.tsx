@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { displayAllergiesForRestaurantCategoryAndProduct } from "../../utils";
 import { Data } from "../../data/data";
 import EditSection from "../EditSection/EditSection";
+import FoodRatingBadge from "../FoodRatingBadge/FoodRatingBadge";
 
 type AllergenInfo = {
   restaurantName: string;
@@ -189,6 +190,7 @@ function FinalResult() {
               subtitle={"Soup"}
               callback={handleCallback}
             />
+            <FoodRatingBadge />
           </Box>
         </Grid>
       </Grid>
