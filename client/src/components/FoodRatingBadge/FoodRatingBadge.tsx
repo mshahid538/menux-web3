@@ -1,4 +1,10 @@
+import CSS from 'csstype';
 import React, { useEffect } from "react";
+
+
+const ratingsStyles: CSS.Properties = {
+  marginTop:'20px'
+};
 
 const FoodRatingBadge = () => {
   useEffect(() => {
@@ -30,7 +36,8 @@ const FoodRatingBadge = () => {
     };
   }, []);
 
-  return <div id="foodRatingContainer">{}</div>;
+  // eslint-disable-next-line react/style-prop-object
+  return <div id="foodRatingContainer" style={ratingsStyles}>{}</div>;
 };
 
 export default FoodRatingBadge;
