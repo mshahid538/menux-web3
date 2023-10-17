@@ -4,11 +4,13 @@ const initialState = {
   value: false, // Initial value
 };
 
+export const SHOW_SUITABLE = "showSuitable/SET_SHOW_SUITABLE";
+
 export const showSuitableSlice = createSlice({
   name: "showSuitable",
   initialState,
   reducers: {
-    setShowSuitable: (state, action) => {
+    [SHOW_SUITABLE]: (state, action) => {
       state.value = action.payload;
     },
   },

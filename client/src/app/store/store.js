@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import allergicReducer from "../features/allergicTo/counterSlice";
 import categorySlice from "../features/category/categorySlice";
 import productSlice from "../features/product/productSlice";
@@ -29,4 +29,5 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
+  middleware: [...getDefaultMiddleware({ serializableCheck: false })], // Disable serializableCheck
 });
