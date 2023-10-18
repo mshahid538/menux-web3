@@ -40,6 +40,10 @@ type RestaurantData = {
 function FinalResult() {
   const product = useSelector((state: any) => state.product.product);
   const res = useSelector((state: any) => state.restaurant.value);
+  const businessid = useSelector(
+    (state: any) => state.restaurant.value.businessId
+  );
+  const badgeurl = useSelector((state: any) => state.restaurant.value.badgeUrl);
 
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
@@ -190,7 +194,7 @@ function FinalResult() {
               subtitle={"Soup"}
               callback={handleCallback}
             />
-            <FoodRatingBadge />
+            <FoodRatingBadge businessId={businessid} badgeUrl={badgeurl} />
           </Box>
         </Grid>
       </Grid>

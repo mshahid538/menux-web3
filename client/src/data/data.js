@@ -24,6 +24,9 @@ export const Data = {
     {
       id: 1,
       name: "Bun & Base",
+      businessId: "1378301",
+      badgeUrl:
+        "https://ratings.food.gov.uk/_next/static/media/fhrs-badge-5.2a3eb9e3.svg",
       specials: ["Amercians", "Burgers", "Pizza"],
       location: "123 Main St, City",
       img: r1,
@@ -469,6 +472,9 @@ export const Data = {
     {
       id: 2,
       name: "Ribeye Steakhouse",
+      businessId: "1273442",
+      badgeUrl:
+        "https://ratings.food.gov.uk/_next/static/media/fhrs-badge-5.2a3eb9e3.svg",
       specials: ["Steakhouse", "Grill", "Halal"],
       location: "123 Main St, City",
       img: r2,
@@ -1310,6 +1316,9 @@ export const Data = {
     {
       id: 3,
       name: "Abdul's",
+      businessId: "1342940",
+      badgeUrl:
+        "https://ratings.food.gov.uk/_next/static/media/fhrs-badge-3.56a22302.svg",
       specials: ["Indian", "Curry"],
       location: "456 Elm St, Town",
       img: r3,
