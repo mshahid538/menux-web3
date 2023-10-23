@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -22,8 +22,13 @@ const userSchema = new Schema({
   pixelDepth: Number,
   platform: String,
   silkAccelerated: Boolean,
-  uuId: String
+  restaurantName: String,
+  allergies: Array,
+  dietary: String,
+  menuDrinks: Array,
+  menuFood: Array,
+  businessid: String,
+  uuId: String,
 });
 
-module.exports = mongoose.model('userSession', userSchema);
-
+module.exports = mongoose.model("userSession", userSchema);

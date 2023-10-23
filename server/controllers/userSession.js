@@ -32,11 +32,19 @@ const values = [
   "isSmartTV",
   "pixelDepth",
   "isTouchScreen",
-  "uuId"
+  "restaurantName",
+  "allergies",
+  "dietary",
+  "menuDrinks",
+  "menuFood",
+  "businessid",
+  "uuId",
 ];
 
 // http://localhost:5000/categories
 const addUserSession = async (req, res) => {
+  console.log("Received data:", req.body);
+  debugger;
   try {
     const createdItem = await useSession.create({
       language: req.body.language,
@@ -60,13 +68,18 @@ const addUserSession = async (req, res) => {
       isSmartTV: req.body.isSmartTV,
       pixelDepth: req.body.pixelDepth,
       isTouchScreen: req.body.isTouchScreen,
-      uuId: req.body.uuId
+      restaurantName: req.body.restaurantName,
+      allergies: req.body.allergies,
+      dietary: req.body.dietary,
+      menuDrinks: req.body.menuDrinks,
+      menuFood: req.body.menuFood,
+      businessid: req.body.businessid,
+      uuId: req.body.uuId,
     });
     res.status(200).json(createdItem);
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
 };
-
 
 module.exports = { getUserSession, addUserSession };

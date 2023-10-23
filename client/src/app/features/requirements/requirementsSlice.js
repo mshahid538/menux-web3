@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: "", // Initial category value
+  value: "UnSelected", //
 };
 
 export const requirementsSlice = createSlice({
