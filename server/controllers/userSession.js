@@ -38,14 +38,15 @@ const values = [
   "menuDrinks",
   "menuFood",
   "businessid",
+  "ipAddress",
   "uuId",
 ];
 
 // http://localhost:5000/categories
 const addUserSession = async (req, res) => {
-  console.log("Received data:", req.body);
   debugger;
   try {
+    req.body.created_at = new Date();
     const createdItem = await useSession.create({
       language: req.body.language,
       platform: req.body.platform,
@@ -74,6 +75,7 @@ const addUserSession = async (req, res) => {
       menuDrinks: req.body.menuDrinks,
       menuFood: req.body.menuFood,
       businessid: req.body.businessid,
+      ipAddress: req.body.ipAddress,
       uuId: req.body.uuId,
     });
     res.status(200).json(createdItem);

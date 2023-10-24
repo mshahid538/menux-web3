@@ -28,6 +28,11 @@ const userSchema = new Schema({
   menuDrinks: Array,
   menuFood: Array,
   businessid: String,
+  dateTime: {
+    type: Date,
+    default: Date.now,
+  },
+  ipAddress: String,
   uuId: String,
 });
 

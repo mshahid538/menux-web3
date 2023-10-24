@@ -9,6 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import axios, { AxiosResponse } from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Column {
   id:
@@ -22,6 +23,7 @@ interface Column {
     | "isiPhone"
     | "isWindows"
     | "os"
+    | "ipAddress"
     | "dateTime";
   label: string;
   minWidth?: number;
@@ -40,10 +42,18 @@ const columns: readonly Column[] = [
   { id: "isiPhone", label: "Iphone", minWidth: 70 },
   { id: "isWindows", label: "windows", minWidth: 70 },
   { id: "os", label: "Operating System", minWidth: 150 },
+  { id: "ipAddress", label: "IP Address", minWidth: 70 },
   {
     id: "dateTime",
     label: "Date and Time",
-    minWidth: 150,
+    minWidth: 130,
+    format: (value) => {
+      if (Array.isArray(value)) {
+        return value.join(", ");
+      }
+      const date = new Date(value);
+      return date.toLocaleString();
+    },
   },
 ];
 
@@ -66,21 +76,12 @@ export default function UserSessionData() {
   function getBooleanDisplayText(value: boolean): string {
     return value ? "Yes" : "No";
   }
-  function getCurrentDateTime() {
-    const now = new Date();
-    return now.toLocaleString(); // adjust the format as needed
-  }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5000/userSessionData");
-        const currentDateTime = getCurrentDateTime();
-        const rowsWithDateTime = res.data.map((row: any) => ({
-          ...row,
-          dateTime: currentDateTime,
-        }));
-        setUserData(rowsWithDateTime);
+        setUserData(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -123,8 +124,8 @@ export default function UserSessionData() {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === "number"
-                            ? column.format(value)
+                          {column.format && column.id === "dateTime"
+                            ? new Date(value).toLocaleString()
                             : typeof value === "boolean"
                             ? getBooleanDisplayText(value)
                             : value}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Grid, TextField, Button, Typography } from "@mui/material";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
@@ -6,6 +6,8 @@ import "./index.css";
 import { getAllRestaurants } from "../../utils";
 import { useDispatch, useSelector } from "react-redux";
 import { setRestaurant } from "../../app/features/restaurant/restaurantSlice";
+import { setClientIp } from "../../app/features/clientip/clientip";
+import axios from "axios";
 
 function SelectRestaurant() {
   localStorage.removeItem("dietary");
@@ -20,6 +22,16 @@ function SelectRestaurant() {
     SetRestaurant(name);
     dispatch(setRestaurant(name));
   };
+
+  const getClientIP = async () => {
+    const res = await axios.get("https://api.ipify.org/?format=json");
+
+    dispatch(setClientIp(res.data.ip));
+  };
+
+  useEffect(() => {
+    getClientIP();
+  }, []);
 
   return (
     <Box sx={{ width: "100%" }}>
