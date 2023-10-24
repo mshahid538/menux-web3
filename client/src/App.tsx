@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 
 import { DeviceUUID } from "device-uuid";
 import axios from "axios";
+import UserSessionData from "./components/Admin/viewSessionData";
 
 function App() {
   const restaurantName = useSelector(
@@ -120,6 +121,7 @@ function App() {
           <Route path="/restaurant" element={<SelectRestaurant />} />
           <Route path="/requirements" element={<DietaryRequirements />} />
           <Route path="/final" element={<FinalResult />} />
+          <Route path="view" element={<UserSessionData />} />
           <Route path="/list" element={<>Comming Soon</>} />
         </Routes>
       </div>
