@@ -138,6 +138,9 @@ export default function UserSessionData() {
                           <TableCell key={column.id} align={column.align}>
                             {column.format && column.id === "dateTime"
                               ? new Date(value).toLocaleString()
+                              : column.id === "allergies" &&
+                                Array.isArray(value)
+                              ? (value as string[]).join(", ") // Type assertion
                               : typeof value === "boolean"
                               ? getBooleanDisplayText(value)
                               : value}
