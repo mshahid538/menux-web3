@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Grid } from "@mui/material";
-
 import { useState, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -10,8 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import axios, { AxiosResponse } from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import Header from "../Header/Header";
 
 interface Column {
@@ -35,7 +33,7 @@ interface Column {
 
 const columns: readonly Column[] = [
   { id: "restaurantName", label: "Restaurants", minWidth: 130 },
-  { id: "allergies", label: "Allergies", minWidth: 70 },
+  { id: "allergies", label: "Allergies", minWidth: 100 },
   { id: "dietary", label: "Dietary", minWidth: 100 },
   { id: "isDesktop", label: "Desktop", minWidth: 70 },
   { id: "isMobile", label: "Mobile", minWidth: 70 },
