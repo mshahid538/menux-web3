@@ -16,7 +16,6 @@ import Header from "../Header/Header";
 
 interface Column {
   id:
-    | "businessid"
     | "restaurantName"
     | "allergies"
     | "dietary"
@@ -35,7 +34,6 @@ interface Column {
 }
 
 const columns: readonly Column[] = [
-  { id: "businessid", label: "Business Id", minWidth: 110 },
   { id: "restaurantName", label: "Business Name", minWidth: 130 },
   { id: "allergies", label: "Allergies", minWidth: 70 },
   { id: "dietary", label: "Dietary", minWidth: 100 },
