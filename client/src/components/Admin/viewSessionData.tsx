@@ -34,7 +34,7 @@ interface Column {
 }
 
 const columns: readonly Column[] = [
-  { id: "restaurantName", label: "Business Name", minWidth: 130 },
+  { id: "restaurantName", label: "Restaurants", minWidth: 130 },
   { id: "allergies", label: "Allergies", minWidth: 70 },
   { id: "dietary", label: "Dietary", minWidth: 100 },
   { id: "isDesktop", label: "Desktop", minWidth: 70 },
