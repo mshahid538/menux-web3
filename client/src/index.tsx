@@ -44,18 +44,16 @@ const theme = createTheme({
 let persistor = persistStore(store);
 
 root.render(
-  <React.StrictMode>
-    <Router>
-      <ThemeProvider theme={theme}>
-        <CssBaseline enableColorScheme />
-        <Provider store={store}>
-          <PersistGate persistor={persistor}>
-            <App />
-          </PersistGate>
-        </Provider>
-      </ThemeProvider>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline enableColorScheme />
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

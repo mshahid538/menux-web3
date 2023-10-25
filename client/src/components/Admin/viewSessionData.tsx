@@ -80,8 +80,17 @@ export default function UserSessionData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/userSessionData");
-        setUserData(res.data);
+        const response = await axios.get(
+          "http://localhost:5000/userSessionData"
+        );
+
+        // Sort the data in descending order based on the timestamp
+        response.data.sort(
+          (a: any, b: any) =>
+            new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime()
+        );
+
+        setUserData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
