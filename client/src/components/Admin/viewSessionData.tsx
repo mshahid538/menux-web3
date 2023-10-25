@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Grid } from "@mui/material";
+
 import { useState, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -10,6 +12,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import axios, { AxiosResponse } from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import Header from "../Header/Header";
 
 interface Column {
   id:
@@ -99,63 +102,68 @@ export default function UserSessionData() {
   }, []);
 
   return (
-    <Paper
-      sx={{
-        width: "100%",
-        overflow: "hidden",
-        // paddingBottom: "100%",
-        padding: "10px",
-        margin: "7% 0 7% 0",
-      }}
-    >
-      <TableContainer sx={{}}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {userData
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && column.id === "dateTime"
-                            ? new Date(value).toLocaleString()
-                            : typeof value === "boolean"
-                            ? getBooleanDisplayText(value)
-                            : value}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={userData.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+    <>
+      <Grid className="header">
+        <Header />
+      </Grid>
+      <Paper
+        sx={{
+          width: "100%",
+          overflow: "hidden",
+          // paddingBottom: "100%",
+          padding: "10px",
+          margin: "7% 0 7% 0",
+        }}
+      >
+        <TableContainer sx={{}}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell
+                    key={column.id}
+                    align={column.align}
+                    style={{ minWidth: column.minWidth }}
+                  >
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {userData
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row) => {
+                  return (
+                    <TableRow hover role="checkbox" tabIndex={-1} key={row}>
+                      {columns.map((column) => {
+                        const value = row[column.id];
+                        return (
+                          <TableCell key={column.id} align={column.align}>
+                            {column.format && column.id === "dateTime"
+                              ? new Date(value).toLocaleString()
+                              : typeof value === "boolean"
+                              ? getBooleanDisplayText(value)
+                              : value}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component="div"
+          count={userData.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Paper>
+    </>
   );
 }
