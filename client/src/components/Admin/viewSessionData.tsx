@@ -17,11 +17,7 @@ interface Column {
     | "restaurantName"
     | "allergies"
     | "dietary"
-    | "isDesktop"
-    | "isMobile"
-    | "isMac"
-    | "isiPhone"
-    | "isWindows"
+    | "checkDevice"
     | "os"
     | "ipAddress"
     | "dateTime";
@@ -35,11 +31,7 @@ const columns: readonly Column[] = [
   { id: "restaurantName", label: "Restaurants", minWidth: 130 },
   { id: "allergies", label: "Allergies", minWidth: 100 },
   { id: "dietary", label: "Dietary", minWidth: 100 },
-  { id: "isDesktop", label: "Desktop", minWidth: 70 },
-  { id: "isMobile", label: "Mobile", minWidth: 70 },
-  { id: "isMac", label: "Mac", minWidth: 70 },
-  { id: "isiPhone", label: "Iphone", minWidth: 70 },
-  { id: "isWindows", label: "windows", minWidth: 70 },
+  { id: "checkDevice", label: "Device Type", minWidth: 120 },
   { id: "os", label: "Operating System", minWidth: 150 },
   { id: "ipAddress", label: "IP Address", minWidth: 70 },
   {

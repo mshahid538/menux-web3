@@ -19,11 +19,6 @@ const values = [
   "isAuthoritative",
   "silkAccelerated",
   "isKindleFire",
-  "isDesktop",
-  "isMobile",
-  "isTablet",
-  "isWindows",
-  "isLinux",
   "isLinux64",
   "isMac",
   "isiPad",
@@ -39,6 +34,7 @@ const values = [
   "menuFood",
   "businessid",
   "ipAddress",
+  "checkDevice",
   "uuId",
 ];
 
@@ -55,12 +51,6 @@ const addUserSession = async (req, res) => {
       isAuthoritative: req.body.isAuthoritative,
       silkAccelerated: req.body.silkAccelerated,
       isKindleFire: req.body.isKindleFire,
-      isDesktop: req.body.isDesktop,
-      isMobile: req.body.isMobile,
-      isTablet: req.body.isTablet,
-      isWindows: req.body.isWindows,
-      isDesktop: req.body.isDesktop,
-      isLinux: req.body.isLinux,
       isLinux64: req.body.isLinux64,
       isMac: req.body.isMac,
       isiPad: req.body.isiPad,
@@ -76,6 +66,7 @@ const addUserSession = async (req, res) => {
       menuFood: req.body.menuFood,
       businessid: req.body.businessid,
       ipAddress: req.body.ipAddress,
+      checkDevice: req.body.checkDevice,
       uuId: req.body.uuId,
     });
     res.status(200).json(createdItem);

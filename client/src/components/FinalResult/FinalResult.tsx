@@ -70,6 +70,22 @@ function FinalResult() {
   // related to user session details
   useEffect(() => {
     var du = new DeviceUUID().parse();
+
+    function checkDevice() {
+      if (du.isDesktop == true) {
+        return "Desktop";
+      } else if (du.isMobile == true) {
+        return "Mobile";
+      } else if (du.isMac == true) {
+        return "Mac";
+      } else if (du.isiPhone == true) {
+        return "Iphone";
+      } else if (du.isWindows == true) {
+        return "Windows";
+      } else {
+        return "Not Found";
+      }
+    }
     const dua = [
       du.language,
       du.platform,
@@ -97,6 +113,7 @@ function FinalResult() {
       menuDrinks,
       menuFood,
       ipAddress,
+      checkDevice(),
       businessid,
     ];
 
@@ -128,6 +145,7 @@ function FinalResult() {
       "menuDrinks",
       "menuFood",
       "ipAddress",
+      "checkDevice",
       "businessid",
       "uuId",
     ];

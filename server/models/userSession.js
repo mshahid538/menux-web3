@@ -33,6 +33,7 @@ const userSchema = new Schema({
     default: Date.now,
   },
   ipAddress: String,
+  checkDevice: String,
   uuId: String,
 });
 
