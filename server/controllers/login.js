@@ -6,6 +6,11 @@ const api = process.env.API_URL;
 const loginUser = async (req, res) => {
   const { username, password } = req.body;
 
+  if (!username || !password) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Username and password are required" });
+  }
   // Hard-coded username and password
   const hardcodedUsername = "admin";
   const hardcodedPassword = "admin";
@@ -15,7 +20,7 @@ const loginUser = async (req, res) => {
   } else {
     res.status(401).json({
       success: false,
-      message: "Incorrect Username and Password!",
+      message: "Incorrect Username or Password!",
     });
   }
 };

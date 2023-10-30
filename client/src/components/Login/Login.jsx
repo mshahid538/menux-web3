@@ -10,30 +10,54 @@ import {
   Avatar,
   Grid,
 } from "@mui/material";
+import Swal from "sweetalert2";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [Error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
+      if (!username || !password) {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed!",
+          text: "Username and password are required. Please enter both fields.",
+        });
+        return;
+      }
       const response = await axios.post("http://localhost:5000/login", {
         username,
         password,
       });
 
-      // Assuming the server sends a success message upon successful login
       if (response.data.success) {
-        localStorage.setItem("login", true)
-        navigate("/view");
+        localStorage.setItem("login", true);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful!",
+          text: "You have successfully logged in.",
+        }).then((result) => {
+          console.log("result", result);
+          if (result.isConfirmed) {
+            localStorage.setItem("login", true);
+            navigate("/view");
+          }
+        });
       } else {
-        // Handle login failure (e.g., show an error message)
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed!",
+          text: "Invalid username or password. Please try again.",
+        });
       }
     } catch (error) {
-      console.error("Login error:", error);
-      setError(error.response.data.message)
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed!",
+        text: "Invalid username or password. Please try again.",
+      });
     }
   };
 
@@ -42,7 +66,6 @@ function Login() {
       <div style={{ paddingBottom: "50%" }}>
         <Grid>
           <Header />
-
         </Grid>
 
         <Grid sx={{ m: 3 }}>
@@ -50,7 +73,7 @@ function Login() {
             Login
           </Typography>
         </Grid>
-        <Container >
+        <Container>
           <TextField
             variant="outlined"
             margin="normal"
@@ -77,7 +100,6 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Typography color={"red"}>{Error}</Typography>
           <Button
             type="button"
             fullWidth
