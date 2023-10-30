@@ -31,8 +31,8 @@ const columns: readonly Column[] = [
   { id: "restaurantName", label: "Restaurants", minWidth: 130 },
   { id: "allergies", label: "Allergies", minWidth: 100 },
   { id: "dietary", label: "Dietary", minWidth: 100 },
-  { id: "checkDevice", label: "Device Type", minWidth: 120 },
-  { id: "os", label: "Operating System", minWidth: 150 },
+  { id: "checkDevice", label: "Device Type", minWidth: 130 },
+  { id: "os", label: "Operating System", minWidth: 120 },
   { id: "ipAddress", label: "IP Address", minWidth: 70 },
   {
     id: "dateTime",
@@ -109,6 +109,7 @@ export default function UserSessionData() {
               <TableRow>
                 {columns.map((column) => (
                   <TableCell
+                    sx={{ fontSize: "1.10rem" }}
                     key={column.id}
                     align={column.align}
                     style={{ minWidth: column.minWidth }}
