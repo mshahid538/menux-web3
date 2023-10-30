@@ -13,13 +13,13 @@ import {
 import Swal from "sweetalert2";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
-      if (!username || !password) {
+      if (!userName || !password) {
         Swal.fire({
           icon: "error",
           title: "Login Failed!",
@@ -27,8 +27,8 @@ function Login() {
         });
         return;
       }
-      const response = await axios.post("http://localhost:5000/login", {
-        username,
+      const response = await axios.post("http://localhost:5000/users/login", {
+        userName,
         password,
       });
 
@@ -41,7 +41,6 @@ function Login() {
         }).then((result) => {
           console.log("result", result);
           if (result.isConfirmed) {
-            localStorage.setItem("login", true);
             navigate("/view");
           }
         });
@@ -84,7 +83,7 @@ function Login() {
             name="username"
             autoComplete="username"
             autoFocus
-            value={username}
+            value={userName}
             onChange={(e) => setUsername(e.target.value)}
           />
           <TextField

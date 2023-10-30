@@ -25,7 +25,6 @@ app.use(`/dieteries`, require("./routers/dieteries"));
 app.use(`/ingredients`, require("./routers/ingredients"));
 app.use(`/users`, require("./routers/users"));
 app.use(`/userSessionData`, require("./routers/userSession"));
-app.use(`/login`, require("./routers/login"));
 
 app.get("/", (req, res) => {
   res.send("default route running.");
