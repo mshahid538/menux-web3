@@ -60,7 +60,7 @@ function Allergies() {
   return (
     <Box sx={{ width: "100%" }}>
       <Grid className="header">
-        <Header />
+        <Header islogin={""} />
       </Grid>
       <Box>
         <Grid className="input" my={3}>

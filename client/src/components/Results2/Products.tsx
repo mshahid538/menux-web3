@@ -2,25 +2,25 @@ import { Box, Grid, Button } from "@mui/material";
 import Header from "../Header/Header";
 import { ResultsTwo } from "../../constants/ResultsTwo";
 import { Link } from "react-router-dom";
-import {useState} from "react"
-import "./index.css"
+import { useState } from "react";
+import "./index.css";
 
 function Products() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
   function handleClick(index: number) {
-    setActiveIndexes((prevIndexes:any) => {
+    setActiveIndexes((prevIndexes: any) => {
       if (prevIndexes.includes(index)) {
-        return prevIndexes.filter((i:any) => i !== index);
+        return prevIndexes.filter((i: any) => i !== index);
       } else {
-        return [ index];
+        return [index];
       }
     });
   }
   return (
     <Box sx={{ width: "100%" }}>
       <Grid className="header">
-        <Header />
+        <Header islogin={""} />
       </Grid>
       <Box my={3}>
         <Box
@@ -31,7 +31,7 @@ function Products() {
           mx={3}
         >
           <Button
-          className="btn"
+            className="btn"
             sx={{
               background: "#ED187C",
               color: "white",
@@ -97,18 +97,24 @@ function Products() {
         ))}
       </Box>
       <Box display={"flex"} justifyContent={"center"}>
-        <Link  to={"/results3"} style={{ color: "#FBD2E5", textDecoration: "none" ,   background: "#ED187C",
-              width: "50%",
-              height: "45px",
-              textTransform: "none",
-              borderRadius: "12px",
-              marginTop: "40px",
-              marginBottom: "20px",
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "center"
-             }}>
-      <Button
+        <Link
+          to={"/results3"}
+          style={{
+            color: "#FBD2E5",
+            textDecoration: "none",
+            background: "#ED187C",
+            width: "50%",
+            height: "45px",
+            textTransform: "none",
+            borderRadius: "12px",
+            marginTop: "40px",
+            marginBottom: "20px",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Button
             sx={{
               background: "black",
               color: "white",
@@ -130,11 +136,10 @@ function Products() {
               },
             }}
           >
-              See Results
+            See Results
           </Button>
-          </Link>
+        </Link>
       </Box>
-    
     </Box>
   );
 }

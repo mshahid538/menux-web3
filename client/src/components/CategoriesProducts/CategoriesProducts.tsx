@@ -1,35 +1,30 @@
-import { Box, Grid,  Button , Typography } from "@mui/material";
+import { Box, Grid, Button, Typography } from "@mui/material";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import ProductAccordion from "../ProductAccordion/ProductAccordion";
 import CategoriesAccordion from "../CategoriesAccordion";
 
-
-
 function CategoriesProducts() {
-
   return (
     <Box sx={{ width: "100%" }}>
       <Grid className="header">
-        <Header />
+        <Header islogin={""} />
       </Grid>
       <Box>
-      <Grid className="input" my={3}>
+        <Grid className="input" my={3}>
           <Typography variant="body2" fontWeight={"bold"} className="p">
             Select:
           </Typography>
         </Grid>
 
-        <Grid className="input" my={3} mx={2}  >
-        <CategoriesAccordion
-            name={"Categories"}
-          />
+        <Grid className="input" my={3} mx={2}>
+          <CategoriesAccordion name={"Categories"} />
         </Grid>
 
-        <Grid className="input" my={3} mx={2}  >
+        <Grid className="input" my={3} mx={2}>
           <ProductAccordion name={"Products"} />
         </Grid>
-        
+
         <Box display={"flex"} sx={{ justifyContent: "center" }}>
           <Link
             to={"/result"}
@@ -60,7 +55,7 @@ function CategoriesProducts() {
               }}
             >
               Submit
-            </Button>  
+            </Button>
           </Link>
         </Box>
       </Box>

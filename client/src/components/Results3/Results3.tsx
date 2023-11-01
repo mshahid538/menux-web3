@@ -2,27 +2,27 @@ import { Box, Grid, Button, Typography } from "@mui/material";
 import Header from "../Header/Header";
 import { ResultsTwo } from "../../constants/ResultsTwo";
 import { Link } from "react-router-dom";
-import {useState} from "react"
-import "./index.css"
+import { useState } from "react";
+import "./index.css";
 
 function Results3() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
   function handleClick(index: number) {
-    setActiveIndexes((prevIndexes:any) => {
+    setActiveIndexes((prevIndexes: any) => {
       if (prevIndexes.includes(index)) {
-        return prevIndexes.filter((i:any) => i !== index);
+        return prevIndexes.filter((i: any) => i !== index);
       } else {
-        return [ index];
+        return [index];
       }
     });
   }
   return (
     <Box sx={{ width: "100%" }}>
       <Grid className="header">
-        <Header />
+        <Header islogin={""} />
       </Grid>
-      <Box my={3} >
+      <Box my={3}>
         <Box
           display={"grid"}
           gap={2}
@@ -59,7 +59,7 @@ function Results3() {
           </Button>
 
           <Button
-          className="btn"
+            className="btn"
             sx={{
               background: "#ED187C",
               color: "white",
@@ -138,7 +138,12 @@ function Results3() {
           </Box>
         </Box>
         <Box display={"flex"} justifyContent={"center"}>
-        <Link  to={"/restaurant"} style={{ color: "#FBD2E5", textDecoration: "none" ,   background: "#ED187C",
+          <Link
+            to={"/restaurant"}
+            style={{
+              color: "#FBD2E5",
+              textDecoration: "none",
+              background: "#ED187C",
               width: "50%",
               height: "45px",
               textTransform: "none",
@@ -147,34 +152,35 @@ function Results3() {
               marginBottom: "20px",
               alignItems: "center",
               display: "flex",
-              justifyContent: "center"
-             }}>
-          <Button
-            sx={{
-              background: "black",
-              color: "white",
-              width: "400px",
-              fontWeight: "bold",
-              border: "2px solid black",
-              textTransform: "capitalize",
-              borderRadius: "15px",
-              height: "10vh",
-              fontSize: 20,
-              display: "flex",
-              textAlign: "start",
               justifyContent: "center",
-              marginY: "10px",
-              paddingLeft: "20px",
-              "&:hover": {
-                background: "black",
-                fontSize: 20,
-              },
             }}
           >
+            <Button
+              sx={{
+                background: "black",
+                color: "white",
+                width: "400px",
+                fontWeight: "bold",
+                border: "2px solid black",
+                textTransform: "capitalize",
+                borderRadius: "15px",
+                height: "10vh",
+                fontSize: 20,
+                display: "flex",
+                textAlign: "start",
+                justifyContent: "center",
+                marginY: "10px",
+                paddingLeft: "20px",
+                "&:hover": {
+                  background: "black",
+                  fontSize: 20,
+                },
+              }}
+            >
               Submit
-          </Button>
+            </Button>
           </Link>
-      </Box>
+        </Box>
       </Box>
     </Box>
   );

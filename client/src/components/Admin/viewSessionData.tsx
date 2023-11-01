@@ -92,7 +92,7 @@ export default function UserSessionData() {
   return (
     <>
       <Grid className="header">
-        <Header />
+        <Header islogin={true} />
       </Grid>
       <Paper
         sx={{

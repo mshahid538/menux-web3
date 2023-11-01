@@ -298,7 +298,7 @@ function FinalResult() {
   return (
     <Box sx={{ width: "100%", backgroundColor: "white" }}>
       <Grid className="header">
-        <Header />
+        <Header islogin={""} />
       </Grid>
       <Grid className="edit">
         <EditSection />

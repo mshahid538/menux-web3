@@ -38,7 +38,7 @@ function DietaryRequirements() {
   return (
     <Box sx={{ width: "100%" }}>
       <Grid className="header">
-        <Header />
+        <Header islogin={""} />
       </Grid>
       <Box className="requirements">
         <Grid className="input" my={3}>

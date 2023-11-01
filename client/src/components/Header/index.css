@@ -8,7 +8,7 @@
 
 .login {
   display: flex;
-  /* width: 50% !important; */
+  width: 0% !important;
   justify-content: right;
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
