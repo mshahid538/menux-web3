@@ -63,7 +63,7 @@ function Login() {
     <Grid component="main" maxWidth="s" style={{ height: "100%" }}>
       <div style={{ paddingBottom: "50%" }}>
         <Grid>
-          <Header />
+          <Header logoPosition={"true"} />
         </Grid>
 
         <Grid sx={{ m: 3 }}>

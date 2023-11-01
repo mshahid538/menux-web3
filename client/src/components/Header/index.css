@@ -1,7 +1,14 @@
-.header{
-    background: black;
-    width: 100% !important;
-    display: flex;
-    justify-content: center;
-    height: 9vh;
+.header {
+  background: black;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  height: 9vh;
+}
+
+.login {
+  display: flex;
+  /* width: 50% !important; */
+  justify-content: right;
+  padding-right: 1rem;
 }
