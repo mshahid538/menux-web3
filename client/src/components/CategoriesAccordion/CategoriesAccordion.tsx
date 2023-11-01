@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Data } from "../../data/data";
 import { Icons } from "../Icons/Icons";
+import { selectedProd } from "../../app/features/selectedProducts/selectedProductsSlice";
 
 const res = Data.restaurants.map((restaurant) => {
   // You can perform transformations or select specific properties here
@@ -40,6 +41,17 @@ function CategoriesAccordion({ name }: any) {
     }
   };
   const handleClickSubChild = (index: number, name: string) => {
+    if (localStorage.getItem("selectedProducts")) {
+      let selectedItem = JSON.parse(
+        localStorage.getItem("selectedProducts") || ""
+      );
+      selectedItem = [...selectedItem, name];
+      localStorage.setItem("selectedProducts", JSON.stringify(selectedItem));
+    } else {
+      localStorage.setItem("selectedProducts", JSON.stringify([name]));
+    }
+    dispatch(selectedProd([name]));
+
     if (expandedIndexSubchild === index) {
       setExpandedIndexSubchild(-1);
     } else {
@@ -182,7 +194,7 @@ function CategoriesAccordion({ name }: any) {
                                 ? "btn active"
                                 : "btn"
                             }`}
-                            onClick={() => handleClickSubChild(ind, name.name)}
+                            onClick={() => handleClickSubChild(ind, ite.name)}
                           >
                             {/* Product (chiken breast, beef ribs, dynamite prawns, etc )  */}
                             <Typography
@@ -309,9 +321,7 @@ function CategoriesAccordion({ name }: any) {
                                   ? "btn active"
                                   : "btn"
                               }`}
-                              onClick={() =>
-                                handleClickSubChild(ind, name.name)
-                              }
+                              onClick={() => handleClickSubChild(ind, ite.name)}
                             >
                               {/* Product (chiken breast, beef ribs, dynamite prawns, etc )  */}
                               <Typography

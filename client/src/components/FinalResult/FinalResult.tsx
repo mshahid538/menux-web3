@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Button } from "@mui/material";
 import Header from "../Header/Header";
 import { useState } from "react";
 import "./index.css";
@@ -12,7 +12,8 @@ import { Data } from "../../data/data";
 import EditSection from "../EditSection/EditSection";
 import FoodRatingBadge from "../FoodRatingBadge/FoodRatingBadge";
 import { DeviceUUID } from "device-uuid";
-
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 type AllergenInfo = {
@@ -42,6 +43,8 @@ type RestaurantData = {
 };
 
 function FinalResult() {
+  const navigate = useNavigate();
+
   const product = useSelector((state: any) => state.product.product);
 
   const badgeurl = useSelector((state: any) => state.restaurant.value.badgeUrl);
@@ -67,8 +70,11 @@ function FinalResult() {
     (state: any) => state.restaurant.value.businessId
   );
 
-  // related to user session details
-  useEffect(() => {
+  const selectedProducts = useSelector(
+    (state: any) => state?.selectedProduct?.value
+  );
+
+  function saveUserPreferences() {
     var du = new DeviceUUID().parse();
 
     function checkDevice() {
@@ -113,11 +119,13 @@ function FinalResult() {
       menuDrinks,
       menuFood,
       ipAddress,
+      selectedProducts,
       checkDevice(),
       businessid,
     ];
 
     const sessionDetails: { [key: string]: any } = {};
+
     const values = [
       "language",
       "platform",
@@ -145,10 +153,12 @@ function FinalResult() {
       "menuDrinks",
       "menuFood",
       "ipAddress",
+      "selectedProducts",
       "checkDevice",
       "businessid",
       "uuId",
     ];
+
     const uuid = du.hashMD5(dua.join(":"));
 
     dua.push(uuid);
@@ -170,8 +180,18 @@ function FinalResult() {
       };
       fetchData();
     }
-  }, []);
-  // end of user session details
+
+    Swal.fire({
+      icon: "success",
+      title: "Save Successful!",
+      text: "You have successfully save user preferences.",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/");
+        localStorage.clear();
+      }
+    });
+  }
 
   const displayAllergiesForRestaurantCategoryAndProduct = (
     restaurantName: string,
@@ -319,8 +339,30 @@ function FinalResult() {
             />
             <FoodRatingBadge businessId={businessid} badgeUrl={badgeurl} />
           </Box>
+          <Button
+            onClick={saveUserPreferences}
+            sx={{
+              "&:hover": {
+                background: "green",
+                color: "black",
+              },
+              backgroundColor: "#ED187C",
+              color: "white",
+              padding: "10px 20px",
+              borderRadius: "10px",
+              border: "none",
+              cursor: "pointer",
+              marginTop: "3rem",
+              textTransform: "capitalize",
+              textDecoration: "none",
+              fontSize: "22px",
+            }}
+          >
+            Save Preferences
+          </Button>
         </Grid>
       </Grid>
+      <Grid></Grid>
     </Box>
   );
 }

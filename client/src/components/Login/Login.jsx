@@ -39,7 +39,6 @@ function Login() {
           title: "Login Successful!",
           text: "You have successfully logged in.",
         }).then((result) => {
-          console.log("result", result);
           if (result.isConfirmed) {
             navigate("/view");
           }

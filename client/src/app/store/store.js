@@ -10,6 +10,7 @@ import clientIpSlice from "../features/clientip/clientip";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
+import selectedProductsSlice from "../features/selectedProducts/selectedProductsSlice";
 
 const persistConfig = {
   key: "menux",
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   restaurant: restaurantSlice,
   suitable: showSuitableSlice,
   clientIP: clientIpSlice,
+  selectedProduct: selectedProductsSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

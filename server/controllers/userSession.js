@@ -34,6 +34,7 @@ const values = [
   "menuFood",
   "businessid",
   "ipAddress",
+  "selectedProducts",
   "checkDevice",
   "uuId",
 ];
@@ -66,6 +67,7 @@ const addUserSession = async (req, res) => {
       menuFood: req.body.menuFood,
       businessid: req.body.businessid,
       ipAddress: req.body.ipAddress,
+      selectedProducts: req.body.selectedProducts,
       checkDevice: req.body.checkDevice,
       uuId: req.body.uuId,
     });
