@@ -21,7 +21,8 @@ interface Column {
     | "os"
     | "ipAddress"
     | "dateTime"
-    | "selectedProducts";
+    | "selectedFoods"
+    | "selectedDrinks";
   label: string;
   minWidth?: number;
   align?: "right";
@@ -35,7 +36,8 @@ const columns: readonly Column[] = [
   { id: "checkDevice", label: "Device Type", minWidth: 130 },
   { id: "os", label: "Operating System", minWidth: 120 },
   { id: "ipAddress", label: "IP Address", minWidth: 70 },
-  { id: "selectedProducts", label: "Selected Products", minWidth: 200 },
+  { id: "selectedFoods", label: "Selected Foods", minWidth: 200 },
+  { id: "selectedDrinks", label: "Selected Drinks", minWidth: 200 },
   {
     id: "dateTime",
     label: "Date and Time",
@@ -134,7 +136,8 @@ export default function UserSessionData() {
                             {column.format && column.id === "dateTime"
                               ? new Date(value).toLocaleString()
                               : (column.id === "allergies" ||
-                                  column.id === "selectedProducts") &&
+                                  column.id === "selectedFoods" ||
+                                  column.id === "selectedDrinks") &&
                                 Array.isArray(value)
                               ? (value as string[]).join(", ") // Type assertion
                               : typeof value === "boolean"

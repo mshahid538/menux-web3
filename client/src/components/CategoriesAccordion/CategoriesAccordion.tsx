@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Data } from "../../data/data";
 import { Icons } from "../Icons/Icons";
-import { selectedProd } from "../../app/features/selectedProducts/selectedProductsSlice";
+import { selectedFood } from "../../app/features/selectedFoods/selectedFoodsSlice";
 
 const res = Data.restaurants.map((restaurant) => {
   // You can perform transformations or select specific properties here
@@ -41,16 +41,16 @@ function CategoriesAccordion({ name }: any) {
     }
   };
   const handleClickSubChild = (index: number, name: string) => {
-    if (localStorage.getItem("selectedProducts")) {
+    if (localStorage.getItem("selectedFoods")) {
       let selectedItem = JSON.parse(
-        localStorage.getItem("selectedProducts") || ""
+        localStorage.getItem("selectedFoods") || ""
       );
       selectedItem = [...selectedItem, name];
-      localStorage.setItem("selectedProducts", JSON.stringify(selectedItem));
+      localStorage.setItem("selectedFoods", JSON.stringify(selectedItem));
     } else {
-      localStorage.setItem("selectedProducts", JSON.stringify([name]));
+      localStorage.setItem("selectedFoods", JSON.stringify([name]));
     }
-    dispatch(selectedProd([name]));
+    dispatch(selectedFood([name]));
 
     if (expandedIndexSubchild === index) {
       setExpandedIndexSubchild(-1);

@@ -4,11 +4,11 @@ const initialState = {
   value: [],
 };
 
-export const selectedProductSlice = createSlice({
-  name: "selectedProducts",
+export const selectedFoodSlice = createSlice({
+  name: "selectedFoods",
   initialState,
   reducers: {
-    selectedProd: (state, action) => {
+    selectedFood: (state, action) => {
       if (action.payload.length === 0) {
         return initialState;
       }
@@ -27,6 +27,6 @@ export const selectedProductSlice = createSlice({
   },
 });
 
-export const { selectedProd } = selectedProductSlice.actions;
+export const { selectedFood } = selectedFoodSlice.actions;
 
-export default selectedProductSlice.reducer;
+export default selectedFoodSlice.reducer;

@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../../app/features/product/productSlice";
+import { selectedDrnk } from "../../app/features/selectedDrinks/selectedDrinksSlice";
 
 function ProductAccordion({ name, callback }: any) {
   const product = useSelector((state: any) => state.product.product);
@@ -49,6 +50,17 @@ function ProductAccordion({ name, callback }: any) {
     }
   };
   const handleClickSubChild = (index: number, name: string) => {
+    if (localStorage.getItem("selectedDrinks")) {
+      let selectedItem = JSON.parse(
+        localStorage.getItem("selectedDrinks") || ""
+      );
+      selectedItem = [...selectedItem, name];
+      localStorage.setItem("selectedDrinks", JSON.stringify(selectedItem));
+    } else {
+      localStorage.setItem("selectedDrinks", JSON.stringify([name]));
+    }
+    dispatch(selectedDrnk([name]));
+
     if (expandedIndexSubchild === index) {
       setExpandedIndexSubchild(-1);
     } else {
@@ -190,7 +202,7 @@ function ProductAccordion({ name, callback }: any) {
                                 ? "btn active"
                                 : "btn"
                             }`}
-                            onClick={() => handleClickSubChild(ind, name.name)}
+                            onClick={() => handleClickSubChild(ind, ite.name)}
                           >
                             <Typography
                               variant="body1"

@@ -70,8 +70,9 @@ function FinalResult() {
     (state: any) => state.restaurant.value.businessId
   );
 
-  const selectedProducts = useSelector(
-    (state: any) => state?.selectedProduct?.value
+  const selectedFoods = useSelector((state: any) => state?.selectedFood?.value);
+  const selectedDrinks = useSelector(
+    (state: any) => state?.selectedDrinks?.value
   );
 
   function saveUserPreferences() {
@@ -119,7 +120,8 @@ function FinalResult() {
       menuDrinks,
       menuFood,
       ipAddress,
-      selectedProducts,
+      selectedFoods,
+      selectedDrinks,
       checkDevice(),
       businessid,
     ];
@@ -153,7 +155,8 @@ function FinalResult() {
       "menuDrinks",
       "menuFood",
       "ipAddress",
-      "selectedProducts",
+      "selectedFoods",
+      "selectedDrinks",
       "checkDevice",
       "businessid",
       "uuId",
@@ -187,7 +190,7 @@ function FinalResult() {
       text: "You have successfully save user preferences.",
     }).then((result) => {
       if (result.isConfirmed) {
-        navigate("/");
+        navigate("/restaurant");
         localStorage.clear();
       }
     });
