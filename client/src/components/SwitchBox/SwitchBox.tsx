@@ -7,9 +7,7 @@ import Typography from "@mui/material/Typography";
 import { FormControlLabel, Switch, SwitchProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
-import showSuitableSlice, {
-  setShowSuitable,
-} from "../../app/features/showSuitable/showSuitableSlice";
+import { setShowSuitable } from "../../app/features/showSuitable/showSuitableSlice";
 
 const bull = (
   <Box
