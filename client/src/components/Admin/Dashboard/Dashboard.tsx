@@ -29,6 +29,8 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import MailIcon from "@mui/icons-material/Mail";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import UserSessionData from "../viewSessionData";
+import { Link } from "react-router-dom";
+import "./index.css"
 
 export default function Dashboard() {
   const drawerWidth = 240;
@@ -105,10 +107,10 @@ export default function Dashboard() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }} className="viewport_inverse">
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar style={{background:"black"}}>
           {/* <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -172,7 +174,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <RestaurantIcon />
               </ListItemIcon>
-              <ListItemText primary="Restaurants" />
+              <Link to={"/admin"} className="nav-links">Restaurants</Link>
             </ListItemButton>
             <ListItemButton
               selected={selectedIndex === 1}
@@ -181,7 +183,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <DinnerDiningIcon />
               </ListItemIcon>
-              <ListItemText primary="Categories" />
+               <Link to={"/adminCategories"} className="nav-links">Categories</Link>
             </ListItemButton>
 
             <ListItemButton
@@ -191,7 +193,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <RamenDiningIcon />
               </ListItemIcon>
-              <ListItemText primary="Products" />
+              <Link to={"/adminProducts"} className="nav-links">Products</Link>
             </ListItemButton>
 
             <ListItemButton
@@ -201,7 +203,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <NoMealsIcon />
               </ListItemIcon>
-              <ListItemText primary="Allergies" />
+              <Link to={"/adminAllergies"} className="nav-links">Allergies</Link>
             </ListItemButton>
 
             <ListItemButton
@@ -211,7 +213,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <SpatialTrackingIcon />
               </ListItemIcon>
-              <ListItemText primary="Users Tracking" />
+              <Link to={"/adminUserTracking"} className="nav-links">Users Tracking</Link>
             </ListItemButton>
           </List>
           <Divider />
@@ -224,7 +226,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <PeopleAltIcon />
               </ListItemIcon>
-              <ListItemText primary="User Mangement" />
+              <Link to={"/adminUserManagement"} className="nav-links">User Mangement</Link>
             </ListItemButton>
             <ListItemButton
               selected={selectedIndex === 6}
@@ -233,7 +235,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <SupportAgentIcon />
               </ListItemIcon>
-              <ListItemText primary="Support" />
+              <Link to={"/adminSupport"} className="nav-links">Support</Link>
             </ListItemButton>
 
             <ListItemButton
@@ -243,7 +245,7 @@ export default function Dashboard() {
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
-              <ListItemText primary="Logout" />
+              <Link to={"/logout"} className="nav-links">Logout</Link>
             </ListItemButton>
           </List>
           {/* <List component="nav" aria-label="secondary mailbox folder">
@@ -278,8 +280,8 @@ export default function Dashboard() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph>
-          <UserSessionData />
+        <Typography paragraph marginLeft={"-570px"}>
+          <UserSessionData isAdmin={true} />
           {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
           enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -293,20 +295,16 @@ export default function Dashboard() {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac. */}
         </Typography>
-        <Typography paragraph>
-          {/* Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a. */}
+        
+        <Toolbar style={{background:"black" , position: "absolute" , bottom: 0 , width: '85%' , right: "0%" , zIndex:"200"}} >
+        <Typography paragraph color={"white"} display={"flex"} justifyContent={"center"} textAlign={"center"} width={"100%"}>
+           <Typography >
+            COPYRIGHT@ MENUX 2023
+           </Typography>
         </Typography>
+          </Toolbar>
       </Main>
+      
     </Box>
   );
 }
