@@ -8,6 +8,7 @@ import Allergies from "./components/Allergies";
 import FinalResult from "./components/FinalResult";
 import UserSessionData from "./components/Admin/viewSessionData";
 import Login from "./components/Login/Login";
+import Dashboard from "./components/Admin/Dashboard";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/final" element={<FinalResult />} />
           <Route path="/view" element={<UserSessionData />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/list" element={<>Comming Soon</>} />
         </Routes>
       </div>
