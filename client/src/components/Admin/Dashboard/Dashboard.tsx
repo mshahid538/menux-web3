@@ -29,6 +29,7 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import MailIcon from "@mui/icons-material/Mail";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import UserSessionData from "../viewSessionData";
+import ProductsData from "../viewProductData";
 
 export default function Dashboard() {
   const drawerWidth = 240;
@@ -279,7 +280,9 @@ export default function Dashboard() {
       <Main open={open}>
         <DrawerHeader />
         <Typography paragraph>
-          <UserSessionData />
+          {/* <UserSessionData /> */}
+
+          <ProductsData isAdmin={true} />
           {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
           enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
