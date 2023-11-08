@@ -31,6 +31,8 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import UserSessionData from "../viewSessionData";
 import { Link } from "react-router-dom";
 import "./index.css"
+import ProductsData from "../viewProductData";
+
 
 export default function Dashboard() {
   const drawerWidth = 240;
@@ -280,8 +282,9 @@ export default function Dashboard() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph marginLeft={"-570px"}>
-          <UserSessionData isAdmin={true} />
+       <Typography paragraph>
+          {/* <UserSessionData /> */}
+          <ProductsData isAdmin={true} />
           {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
           enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
