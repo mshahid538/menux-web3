@@ -47,12 +47,18 @@
   color: green !important;
 }
 
-.viewport {
+
+
+.viewport{
   width: 470px;
   border-left: 1px solid #c5aeae;
   border-right: 1px solid #c5aeae;
   border-bottom: 1px solid #c5aeae;
 }
+
+
+
+
 @media only screen and (min-width: 100px) and (max-width: 768px) {
   /* .btn {
     width: 200px !important;

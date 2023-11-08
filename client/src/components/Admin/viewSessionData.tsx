@@ -52,7 +52,7 @@ const columns: readonly Column[] = [
   },
 ];
 
-export default function UserSessionData() {
+export default function UserSessionData({isAdmin}:any) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [userData, setUserData] = useState([]);
@@ -95,16 +95,17 @@ export default function UserSessionData() {
 
   return (
     <>
-      <Grid className="header">
+     {!isAdmin && <Grid className="header">
         <Header islogin={true} />
-      </Grid>
+      </Grid> } 
       <Paper
         sx={{
           width: "100%",
           overflow: "hidden",
           // paddingBottom: "100%",
           padding: "10px",
-          margin: "7% 0 7% 0",
+          margin: !isAdmin ? "7% 0 7% 0" : "0vh",
+         height: !isAdmin ? "auto" : "75vh",
         }}
       >
         <TableContainer sx={{}}>

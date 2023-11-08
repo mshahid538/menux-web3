@@ -2,7 +2,7 @@ const Product = require("../models/product");
 const Ingredient = require("../models/ingredient");
 const api = process.env.API_URL;
 
-// http://localhost:5000/products/
+// https://menux-web.onrender.com/products/
 const getProducts = async (req, res) => {
   const productsList = await Product.find().populate(
     "freeFrom ingredients mayContain notSuitable",
@@ -14,12 +14,9 @@ const getProducts = async (req, res) => {
   res.send(productsList);
 };
 
-// http://localhost:5000/products
+// https://menux-web.onrender.com/products
 const addProducts = async (req, res) => {
-  await Product.create({
-    name: req.body.name,
-    description: req.body.description,
-  })
+  await Product.create(req.body)
     .then((createdItem) => {
       res.status(200).json(createdItem);
     })
